@@ -11,6 +11,7 @@ const config: Config = {
   },
   transformIgnorePatterns: ['/node_modules/(?!(msw|@mswjs|until-async|react-error-boundary)/)'],
   moduleNameMapper: {
+    '\\.(png|jpg|jpeg|gif|webp|svg)$': '<rootDir>/src/test/__mocks__/file-mock.ts',
     '^@/(.*)$': '<rootDir>/src/$1',
   },
   setupFiles: ['<rootDir>/src/test/setup-env.ts'],

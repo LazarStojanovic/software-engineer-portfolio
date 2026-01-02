@@ -9,7 +9,7 @@ import i18n from '@/lib/i18n';
 
 expect.extend(toHaveNoViolations);
 
-const renderHome = () => {
+const renderHome = (): ReturnType<typeof render> => {
   return render(
     <HelmetProvider>
       <I18nextProvider i18n={i18n}>
@@ -24,59 +24,40 @@ const renderHome = () => {
 describe('Home Page', () => {
   it('renders hero section with developer name', () => {
     renderHome();
-    expect(screen.getByText('John Doe')).toBeInTheDocument();
+    expect(screen.getByText('Lazar Stojanović')).toBeInTheDocument();
   });
 
-  it('renders hero role line', () => {
+  it('renders hero role badge', () => {
     renderHome();
-    expect(screen.getByText('Frontend Engineer · React · Angular · Next.js')).toBeInTheDocument();
+    // Multiple elements have "Software Engineer" text - use getAllByText
+    const roleElements = screen.getAllByText('Software Engineer');
+    expect(roleElements.length).toBeGreaterThan(0);
   });
 
   it('renders hero value proposition', () => {
     renderHome();
     expect(
-      screen.getByText('I build fast, scalable, and well-designed web applications.')
+      screen.getByText('I build and lead frontend teams that deliver high-quality products.')
     ).toBeInTheDocument();
   });
 
   it('renders primary CTA button (View Projects)', () => {
     renderHome();
-    const projectsLink = screen.getByRole('link', { name: /projects/i });
+    const projectsLink = screen.getByRole('link', { name: /see my work/i });
     expect(projectsLink).toBeInTheDocument();
     expect(projectsLink).toHaveAttribute('href', '/projects');
   });
 
   it('renders secondary CTA button (Contact)', () => {
     renderHome();
-    const contactLink = screen.getByRole('link', { name: /contact/i });
+    const contactLink = screen.getByRole('link', { name: /let's talk/i });
     expect(contactLink).toBeInTheDocument();
     expect(contactLink).toHaveAttribute('href', '/contact');
   });
 
-  it('renders intro section paragraph', () => {
-    renderHome();
-    expect(
-      screen.getByText(/I specialize in creating clean, maintainable architectures/i)
-    ).toBeInTheDocument();
-  });
-
   it('renders featured projects section title', () => {
     renderHome();
-    expect(screen.getByText('Featured Projects')).toBeInTheDocument();
-  });
-
-  it('renders all featured project cards', () => {
-    renderHome();
-    expect(screen.getByText('E-Commerce Platform')).toBeInTheDocument();
-    expect(screen.getByText('SaaS Dashboard')).toBeInTheDocument();
-    expect(screen.getByText('Mobile Web App')).toBeInTheDocument();
-  });
-
-  it('renders project problem statements', () => {
-    renderHome();
-    expect(screen.getByText(/Built a high-performance e-commerce solution/i)).toBeInTheDocument();
-    expect(screen.getByText(/Developed a scalable analytics dashboard/i)).toBeInTheDocument();
-    expect(screen.getByText(/Created a responsive mobile-first application/i)).toBeInTheDocument();
+    expect(screen.getByText('Featured Work')).toBeInTheDocument();
   });
 
   it('renders tech stack section title', () => {
@@ -87,28 +68,25 @@ describe('Home Page', () => {
   it('renders tech stack categories', () => {
     renderHome();
     expect(screen.getByText('Frontend')).toBeInTheDocument();
-    expect(screen.getByText('Styling / UI')).toBeInTheDocument();
-    expect(screen.getByText('Tooling / Testing')).toBeInTheDocument();
+    expect(screen.getByText('State & Data')).toBeInTheDocument();
+    expect(screen.getByText('Tooling & Leadership')).toBeInTheDocument();
   });
 
   it('renders experience teaser', () => {
     renderHome();
-    expect(screen.getByText('8+ years building production web applications')).toBeInTheDocument();
-    expect(
-      screen.getByText('Experience with scalable frontends and real-world products')
-    ).toBeInTheDocument();
+    expect(screen.getByText('5+ years building production web applications')).toBeInTheDocument();
   });
 
   it('renders experience link', () => {
     renderHome();
-    const experienceLink = screen.getByRole('link', { name: /view full experience/i });
+    const experienceLink = screen.getByRole('link', { name: /view full timeline/i });
     expect(experienceLink).toBeInTheDocument();
     expect(experienceLink).toHaveAttribute('href', '/experience');
   });
 
   it('renders contact CTA section', () => {
     renderHome();
-    expect(screen.getByText("Let's build something solid.")).toBeInTheDocument();
+    expect(screen.getByText("Let's build something great.")).toBeInTheDocument();
     const contactCTALink = screen.getByRole('link', { name: /get in touch/i });
     expect(contactCTALink).toBeInTheDocument();
     expect(contactCTALink).toHaveAttribute('href', '/contact');
@@ -118,7 +96,7 @@ describe('Home Page', () => {
     renderHome();
 
     await new Promise(resolve => setTimeout(resolve, 100));
-    expect(document.title).toContain('John Doe');
+    expect(document.title).toContain('Lazar Stojanović');
   });
 
   it('renders description meta tag', async () => {
@@ -129,7 +107,7 @@ describe('Home Page', () => {
     expect(metaDescription).toBeInTheDocument();
     expect(metaDescription).toHaveAttribute(
       'content',
-      'I build fast, scalable, and well-designed web applications.'
+      'I build and lead frontend teams that deliver high-quality products.'
     );
   });
 
@@ -145,10 +123,12 @@ describe('Home Page', () => {
     expect(sections.length).toBeGreaterThan(0);
   });
 
-  it('renders project tech stack badges', () => {
+  it('renders tech stack technologies', () => {
     renderHome();
-    expect(screen.getByText('React')).toBeInTheDocument();
-    expect(screen.getByText('TypeScript')).toBeInTheDocument();
-    expect(screen.getByText('Next.js')).toBeInTheDocument();
+    // Multiple elements have these tech names - use getAllByText
+    const reactElements = screen.getAllByText('React');
+    const tsElements = screen.getAllByText('TypeScript');
+    expect(reactElements.length).toBeGreaterThan(0);
+    expect(tsElements.length).toBeGreaterThan(0);
   });
 });

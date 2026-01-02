@@ -35,8 +35,7 @@ describe('App', () => {
     const appContainer = container.querySelector('.min-h-screen');
     expect(appContainer).toBeInTheDocument();
     expect(appContainer).toHaveClass(
-      'bg-white',
-      'dark:bg-neutral-950',
+      'bg-background',
       'transition-colors',
       'duration-300',
       'overflow-x-hidden'
