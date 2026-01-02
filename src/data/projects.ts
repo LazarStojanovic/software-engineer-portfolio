@@ -1,13 +1,62 @@
 import type { CaseStudy, FeaturedProject } from '@/types';
 
 export const caseStudies: CaseStudy[] = [
-  // Symphony
+  // Symphony - AI Banking Initiative
+  {
+    id: '0',
+    slug: 'ai-banking-platform',
+    title: 'AI-Powered Banking Model Training Platform',
+    role: 'Frontend Lead',
+    duration: 'Oct 2025 - Present',
+    company: 'Symphony',
+    context:
+      'Symphony launched a strategic AI-first development initiative, requiring cutting-edge applications for the banking sector. The project encompasses two key deliverables: an AI model training platform for banking clients and a company-wide UI component library.',
+    problem:
+      'Building an AI-first banking application required modern architecture that could handle complex ML workflows while maintaining strict financial compliance. Additionally, Symphony needed a unified UI library to ensure consistency across all current and future projects.',
+    approach: [
+      'Architected monorepo structure for shared code and independent deployments',
+      'Implemented AI-first development workflow using Cursor for accelerated development',
+      'Leading development of enterprise UI library based on PrimeNG primitives',
+      'Established design system patterns for cross-project consistency',
+      'Sole developer on UI library ensuring quality and architectural coherence',
+    ],
+    technicalDecisions: [
+      {
+        decision: 'Latest Angular with standalone components',
+        rationale:
+          'Modern Angular provides excellent TypeScript integration, signals for reactivity, and enterprise-grade tooling',
+      },
+      {
+        decision: 'AI-first development with Cursor',
+        rationale:
+          'Cursor AI accelerates development velocity while maintaining code quality through intelligent suggestions',
+      },
+      {
+        decision: 'PrimeNG-based UI library',
+        rationale: `PrimeNG offers comprehensive enterprise components that can be customized for Symphony's design system`,
+      },
+      {
+        decision: 'Monorepo architecture',
+        rationale:
+          'Enables shared code between AI platform and UI library while maintaining independent deployment pipelines',
+      },
+    ],
+    outcomes: [
+      { metric: 'Scope', value: '2 Projects', description: 'AI Platform + UI Library' },
+      { metric: 'UI Library', value: 'Solo Lead', description: 'Sole developer' },
+      { metric: 'Approach', value: 'AI-First', description: 'Cursor-powered development' },
+      { metric: 'Impact', value: 'Company-wide', description: 'Library reused across projects' },
+    ],
+    techStack: ['Angular', 'TypeScript', 'Tailwind CSS', 'PrimeNG', 'Cursor AI', 'Monorepo', 'Nx'],
+  },
+
+  // Symphony - Financial Platform (completed)
   {
     id: '1',
     slug: 'financial-platform',
     title: 'Financial Services Platform',
     role: 'Frontend Lead',
-    duration: 'Apr 2025 - Present',
+    duration: 'Apr 2025 - Oct 2025',
     company: 'Symphony',
     context:
       'Symphony needed a modern financial services platform with complex data requirements and strict compliance needs.',
@@ -257,7 +306,7 @@ export const caseStudies: CaseStudy[] = [
     slug: 'medical-admin-panel',
     title: 'Medical Admin Panel',
     role: 'Software Engineer',
-    duration: 'Contract Period',
+    duration: 'Jan 2024 - Aug 2024',
     company: 'HEFES',
     context: 'A healthcare client needed a comprehensive admin panel with reporting capabilities.',
     problem:
@@ -288,7 +337,7 @@ export const caseStudies: CaseStudy[] = [
     slug: 'cloud-storage',
     title: 'Cloud Storage Platform',
     role: 'Software Engineer',
-    duration: 'Contract Period',
+    duration: 'Jun 2023 - Dec 2023',
     company: 'HEFES',
     context: 'A cloud storage platform needed feature enhancements and bug fixes.',
     problem:
@@ -318,7 +367,7 @@ export const caseStudies: CaseStudy[] = [
     slug: 'government-medical',
     title: 'Government Medical System',
     role: 'Software Engineer',
-    duration: 'Contract Period',
+    duration: 'Oct 2022 - May 2023',
     company: 'HEFES',
     context: 'A government healthcare system required ongoing maintenance and new features.',
     problem:

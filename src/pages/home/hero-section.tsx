@@ -7,6 +7,8 @@ import { Mail, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { Variants, Transition } from 'framer-motion';
 
+import profileImage from '@/assets/images/lazar-portfolio.png';
+
 interface HeroSectionProps {
   animationVariants: Variants;
   transition: Transition;
@@ -114,24 +116,59 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Visual Element / Avatar Placeholder */}
+          {/* Right Content - Profile Image */}
           <motion.div
-            initial={{ opacity: 0, scale: prefersReducedMotion ? 1 : 0.9 }}
-            animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ ...transition, delay: prefersReducedMotion ? 0 : 0.3 }}
             className='hidden lg:flex items-center justify-center'
           >
             <div className='relative'>
-              {/* Decorative rings */}
-              <div className='absolute inset-0 -m-8 rounded-full border border-border/50 animate-pulse' />
-              <div className='absolute inset-0 -m-16 rounded-full border border-border/30' />
-              <div className='absolute inset-0 -m-24 rounded-full border border-border/20' />
+              {/* Decorative geometric elements */}
+              <div className='absolute -inset-4 rounded-3xl border border-border/40 bg-gradient-to-br from-muted/50 to-transparent' />
+              <div className='absolute -inset-8 rounded-[2rem] border border-border/20' />
 
-              {/* Avatar placeholder */}
-              <div className='w-64 h-64 xl:w-80 xl:h-80 rounded-full bg-gradient-to-br from-primary/20 via-accent-500/20 to-primary/10 flex items-center justify-center border border-border/50 shadow-large'>
-                <div className='text-6xl xl:text-7xl font-display font-bold text-primary/60'>
-                  LS
+              {/* Corner accents */}
+              <div className='absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-primary/40 rounded-tl-lg' />
+              <div className='absolute -top-2 -right-2 w-6 h-6 border-t-2 border-r-2 border-primary/40 rounded-tr-lg' />
+              <div className='absolute -bottom-2 -left-2 w-6 h-6 border-b-2 border-l-2 border-accent-500/40 rounded-bl-lg' />
+              <div className='absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-accent-500/40 rounded-br-lg' />
+
+              {/* Main card container */}
+              <div className='relative rounded-2xl overflow-hidden border border-border bg-card shadow-large'>
+                {/* Grid pattern overlay */}
+                <div className='absolute inset-0 bg-grid-pattern opacity-5' />
+
+                {/* Subtle gradient overlay */}
+                <div className='absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent-500/5' />
+
+                {/* Image container */}
+                <div className='relative w-72 h-80 xl:w-80 xl:h-96'>
+                  <img
+                    src={profileImage}
+                    alt='Lazar Stojanović'
+                    className='w-full h-full object-cover object-top'
+                  />
+
+                  {/* Bottom fade with info */}
+                  <div className='absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-card via-card/80 to-transparent' />
+                  <div className='absolute bottom-4 left-4 right-4'>
+                    <div className='flex items-center justify-between'>
+                      <div className='text-xs font-mono text-muted-foreground uppercase tracking-wider'>
+                        Est. 2020
+                      </div>
+                      <div className='flex items-center gap-1'>
+                        <span className='w-2 h-2 rounded-full bg-accent-500 animate-pulse' />
+                        <span className='text-xs text-muted-foreground'>Available</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+
+              {/* Floating badge */}
+              <div className='absolute -bottom-3 -right-3 px-3 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-medium shadow-lg'>
+                5+ Years
               </div>
             </div>
           </motion.div>
