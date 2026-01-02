@@ -80,3 +80,75 @@ export interface SocialLink {
   url: string;
   icon: string;
 }
+
+export interface Project {
+  id: string;
+  name: string;
+  problem: string;
+  techStack: string[];
+  href: string;
+}
+
+export interface TechCategory {
+  name: string;
+  technologies: string[];
+}
+
+// Case Study - Senior-level project representation
+export interface CaseStudy {
+  id: string;
+  slug: string;
+  title: string;
+  role: string;
+  duration: string;
+  thumbnail?: string;
+
+  // The story
+  context: string;
+  problem: string;
+  approach: string[];
+  technicalDecisions: TechnicalDecision[];
+  outcomes: Outcome[];
+
+  // Tech details
+  techStack: string[];
+  architectureHighlights?: string[];
+
+  // Links
+  liveUrl?: string;
+  githubUrl?: string;
+}
+
+export interface TechnicalDecision {
+  decision: string;
+  rationale: string;
+}
+
+export interface Outcome {
+  metric: string;
+  value: string;
+  description?: string;
+}
+
+// Featured project for home page display
+export interface FeaturedProject {
+  id: string;
+  title: string;
+  role: string;
+  problem: string;
+  outcome: string;
+  techStack: string[];
+  slug: string;
+}
+
+// Experience timeline item
+export interface ExperienceItem {
+  id: string;
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  description: string;
+  achievements: string[];
+  technologies: string[];
+}

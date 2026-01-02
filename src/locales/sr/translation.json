@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Osnovni Projekat",
-    "description": "Moderan React šablon projekta sa TypeScript-om, Tailwind CSS-om i još mnogo toga."
+    "title": "John Doe - Frontend Inženjer",
+    "description": "Senior Frontend Inženjer specijalizovan za React, TypeScript i skalabilne web aplikacije."
   },
   "common": {
     "loading": "Učitavanje...",
@@ -16,5 +16,77 @@
   "language": {
     "en": "Engleski",
     "sr": "Srpski"
+  },
+  "nav": {
+    "home": "Početna",
+    "projects": "Radovi",
+    "experience": "Iskustvo",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "name": "John Doe",
+    "role": "Senior Frontend Inženjer",
+    "valueProp": "Isporučujem produkcijske React aplikacije koje skaliraju do 100K+ korisnika.",
+    "subtitle": "Specijalizovan za kompleksnu vizualizaciju podataka, real-time sisteme i optimizaciju performansi.",
+    "credibility": "8+ godina · Prethodno u Tech Startup Inc.",
+    "cta": {
+      "primary": "Pogledaj radove",
+      "secondary": "Kontaktiraj me"
+    },
+    "scroll": "Skroluj za više"
+  },
+  "intro": {
+    "paragraph": "Specijalizujem se za kreiranje čistih, održivih arhitektura koje prioritizuju performanse i korisničko iskustvo. Moj pristup se fokusira na pisanje koda koji se skalira, dobro radi pod opterećenjem i ostaje lako razumljiv i modifikovan tokom vremena."
+  },
+  "projects": {
+    "title": "Istaknuti Radovi",
+    "viewAll": "Pogledaj sve projekte",
+    "project1": {
+      "name": "E-Commerce Platforma",
+      "role": "Vodeći Frontend Inženjer",
+      "problem": "Rekonstruisao checkout tok za e-commerce platformu sa visokim prometom koja se borila sa napuštanjem korpe i sporim učitavanjem.",
+      "outcome": "40% brže učitavanje · 25% povećanje konverzija"
+    },
+    "project2": {
+      "name": "Analytics Dashboard",
+      "role": "Senior Frontend Developer",
+      "problem": "Izgradio real-time analytics dashboard za fintech startup koji je trebao vizualizovati kompleksne trading podatke.",
+      "outcome": "5K istovremenih korisnika · Ažuriranja ispod 100ms"
+    },
+    "project3": {
+      "name": "Mobilna PWA",
+      "role": "Frontend Arhitekta",
+      "problem": "Dizajnirao offline-first mobilnu aplikaciju za terenske radnike sa nepouzdanom konekcijom.",
+      "outcome": "99.9% uptime · 60% smanjenje potrošnje podataka"
+    }
+  },
+  "techStack": {
+    "title": "Tehnologije",
+    "frontend": {
+      "title": "Frontend",
+      "technologies": "React, TypeScript, Next.js, Vue.js"
+    },
+    "styling": {
+      "title": "UI & Styling",
+      "technologies": "Tailwind CSS, Framer Motion, Radix UI"
+    },
+    "tooling": {
+      "title": "Alati & Testiranje",
+      "technologies": "Vitest, Playwright, ESLint, Vite"
+    }
+  },
+  "experience": {
+    "teaser": "8+ godina izgradnje produkcijskih web aplikacija",
+    "description": "Od startupa do enterprise, isporučujem proizvode koji su bitni.",
+    "link": "Pogledaj punu istoriju"
+  },
+  "contact": {
+    "headline": "Hajde da napravimo nešto odlično.",
+    "cta": "Kontaktiraj me"
+  },
+  "footer": {
+    "copyright": "© 2024 John Doe",
+    "builtWith": "Napravljeno sa React + TypeScript",
+    "status": "Otvoren za prilike"
   }
 }

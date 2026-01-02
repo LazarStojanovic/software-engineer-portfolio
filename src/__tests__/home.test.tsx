@@ -1,100 +1,154 @@
 import { render, screen } from '@testing-library/react';
 import { HelmetProvider } from 'react-helmet-async';
 import { I18nextProvider } from 'react-i18next';
+import { BrowserRouter } from 'react-router-dom';
+import { axe, toHaveNoViolations } from 'jest-axe';
 
 import Home from '@/pages/home';
 import i18n from '@/lib/i18n';
 
-describe('Home Page', () => {
-  it('renders home page content', () => {
-    render(
-      <HelmetProvider>
-        <I18nextProvider i18n={i18n}>
-          <Home />
-        </I18nextProvider>
-      </HelmetProvider>
-    );
+expect.extend(toHaveNoViolations);
 
-    expect(screen.getByText('Base Project')).toBeInTheDocument();
+const renderHome = () => {
+  return render(
+    <HelmetProvider>
+      <I18nextProvider i18n={i18n}>
+        <BrowserRouter>
+          <Home />
+        </BrowserRouter>
+      </I18nextProvider>
+    </HelmetProvider>
+  );
+};
+
+describe('Home Page', () => {
+  it('renders hero section with developer name', () => {
+    renderHome();
+    expect(screen.getByText('John Doe')).toBeInTheDocument();
+  });
+
+  it('renders hero role line', () => {
+    renderHome();
+    expect(screen.getByText('Frontend Engineer · React · Angular · Next.js')).toBeInTheDocument();
+  });
+
+  it('renders hero value proposition', () => {
+    renderHome();
+    expect(
+      screen.getByText('I build fast, scalable, and well-designed web applications.')
+    ).toBeInTheDocument();
+  });
+
+  it('renders primary CTA button (View Projects)', () => {
+    renderHome();
+    const projectsLink = screen.getByRole('link', { name: /projects/i });
+    expect(projectsLink).toBeInTheDocument();
+    expect(projectsLink).toHaveAttribute('href', '/projects');
+  });
+
+  it('renders secondary CTA button (Contact)', () => {
+    renderHome();
+    const contactLink = screen.getByRole('link', { name: /contact/i });
+    expect(contactLink).toBeInTheDocument();
+    expect(contactLink).toHaveAttribute('href', '/contact');
+  });
+
+  it('renders intro section paragraph', () => {
+    renderHome();
+    expect(
+      screen.getByText(/I specialize in creating clean, maintainable architectures/i)
+    ).toBeInTheDocument();
+  });
+
+  it('renders featured projects section title', () => {
+    renderHome();
+    expect(screen.getByText('Featured Projects')).toBeInTheDocument();
+  });
+
+  it('renders all featured project cards', () => {
+    renderHome();
+    expect(screen.getByText('E-Commerce Platform')).toBeInTheDocument();
+    expect(screen.getByText('SaaS Dashboard')).toBeInTheDocument();
+    expect(screen.getByText('Mobile Web App')).toBeInTheDocument();
+  });
+
+  it('renders project problem statements', () => {
+    renderHome();
+    expect(screen.getByText(/Built a high-performance e-commerce solution/i)).toBeInTheDocument();
+    expect(screen.getByText(/Developed a scalable analytics dashboard/i)).toBeInTheDocument();
+    expect(screen.getByText(/Created a responsive mobile-first application/i)).toBeInTheDocument();
+  });
+
+  it('renders tech stack section title', () => {
+    renderHome();
+    expect(screen.getByText('Tech Stack')).toBeInTheDocument();
+  });
+
+  it('renders tech stack categories', () => {
+    renderHome();
+    expect(screen.getByText('Frontend')).toBeInTheDocument();
+    expect(screen.getByText('Styling / UI')).toBeInTheDocument();
+    expect(screen.getByText('Tooling / Testing')).toBeInTheDocument();
+  });
+
+  it('renders experience teaser', () => {
+    renderHome();
+    expect(screen.getByText('8+ years building production web applications')).toBeInTheDocument();
+    expect(
+      screen.getByText('Experience with scalable frontends and real-world products')
+    ).toBeInTheDocument();
+  });
+
+  it('renders experience link', () => {
+    renderHome();
+    const experienceLink = screen.getByRole('link', { name: /view full experience/i });
+    expect(experienceLink).toBeInTheDocument();
+    expect(experienceLink).toHaveAttribute('href', '/experience');
+  });
+
+  it('renders contact CTA section', () => {
+    renderHome();
+    expect(screen.getByText("Let's build something solid.")).toBeInTheDocument();
+    const contactCTALink = screen.getByRole('link', { name: /get in touch/i });
+    expect(contactCTALink).toBeInTheDocument();
+    expect(contactCTALink).toHaveAttribute('href', '/contact');
   });
 
   it('renders page title in helmet', async () => {
-    render(
-      <HelmetProvider>
-        <I18nextProvider i18n={i18n}>
-          <Home />
-        </I18nextProvider>
-      </HelmetProvider>
-    );
+    renderHome();
 
-    // Wait for Helmet to update the title
     await new Promise(resolve => setTimeout(resolve, 100));
-    expect(document.title).toBe('Base Project');
+    expect(document.title).toContain('John Doe');
   });
 
   it('renders description meta tag', async () => {
-    render(
-      <HelmetProvider>
-        <I18nextProvider i18n={i18n}>
-          <Home />
-        </I18nextProvider>
-      </HelmetProvider>
-    );
+    renderHome();
 
-    // Wait for Helmet to update meta tags
     await new Promise(resolve => setTimeout(resolve, 100));
     const metaDescription = document.querySelector('meta[name="description"]');
     expect(metaDescription).toBeInTheDocument();
     expect(metaDescription).toHaveAttribute(
       'content',
-      'A modern React project template with TypeScript, Tailwind CSS, and more.'
+      'I build fast, scalable, and well-designed web applications.'
     );
   });
 
-  it('renders React Docs link', () => {
-    render(
-      <HelmetProvider>
-        <I18nextProvider i18n={i18n}>
-          <Home />
-        </I18nextProvider>
-      </HelmetProvider>
-    );
-
-    const reactLink = screen.getByRole('link', { name: /react docs/i });
-    expect(reactLink).toBeInTheDocument();
-    expect(reactLink).toHaveAttribute('href', 'https://react.dev');
-    expect(reactLink).toHaveAttribute('target', '_blank');
-    expect(reactLink).toHaveAttribute('rel', 'noopener noreferrer');
+  it('has no accessibility violations', async () => {
+    const { container } = renderHome();
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 
-  it('renders Vite Docs link', () => {
-    render(
-      <HelmetProvider>
-        <I18nextProvider i18n={i18n}>
-          <Home />
-        </I18nextProvider>
-      </HelmetProvider>
-    );
-
-    const viteLink = screen.getByRole('link', { name: /vite docs/i });
-    expect(viteLink).toBeInTheDocument();
-    expect(viteLink).toHaveAttribute('href', 'https://vitejs.dev');
-    expect(viteLink).toHaveAttribute('target', '_blank');
-    expect(viteLink).toHaveAttribute('rel', 'noopener noreferrer');
+  it('uses semantic HTML structure', () => {
+    renderHome();
+    const sections = document.querySelectorAll('section');
+    expect(sections.length).toBeGreaterThan(0);
   });
 
-  it('renders page description', () => {
-    render(
-      <HelmetProvider>
-        <I18nextProvider i18n={i18n}>
-          <Home />
-        </I18nextProvider>
-      </HelmetProvider>
-    );
-
-    // Description should be rendered
-    expect(
-      screen.getByText('A modern React project template with TypeScript, Tailwind CSS, and more.')
-    ).toBeInTheDocument();
+  it('renders project tech stack badges', () => {
+    renderHome();
+    expect(screen.getByText('React')).toBeInTheDocument();
+    expect(screen.getByText('TypeScript')).toBeInTheDocument();
+    expect(screen.getByText('Next.js')).toBeInTheDocument();
   });
 });

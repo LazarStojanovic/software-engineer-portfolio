@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Base Project",
-    "description": "A modern React project template with TypeScript, Tailwind CSS, and more."
+    "title": "John Doe - Frontend Engineer",
+    "description": "Senior Frontend Engineer specializing in React, TypeScript, and scalable web applications."
   },
   "common": {
     "loading": "Loading...",
@@ -16,5 +16,77 @@
   "language": {
     "en": "English",
     "sr": "Serbian"
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Work",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "name": "John Doe",
+    "role": "Senior Frontend Engineer",
+    "valueProp": "I ship production React applications that scale to 100K+ users.",
+    "subtitle": "Specializing in complex data visualization, real-time systems, and performance optimization.",
+    "credibility": "8+ years · Previously at Tech Startup Inc.",
+    "cta": {
+      "primary": "See my work",
+      "secondary": "Let's talk"
+    },
+    "scroll": "Scroll to explore"
+  },
+  "intro": {
+    "paragraph": "I specialize in creating clean, maintainable architectures that prioritize performance and user experience. My approach focuses on writing code that scales, performs well under load, and remains easy to understand and modify over time."
+  },
+  "projects": {
+    "title": "Featured Work",
+    "viewAll": "View all projects",
+    "project1": {
+      "name": "E-Commerce Platform",
+      "role": "Lead Frontend Engineer",
+      "problem": "Rebuilt checkout flow for a high-traffic e-commerce platform struggling with cart abandonment and slow load times.",
+      "outcome": "40% faster load time · 25% increase in conversions"
+    },
+    "project2": {
+      "name": "Analytics Dashboard",
+      "role": "Senior Frontend Developer",
+      "problem": "Built a real-time analytics dashboard for a fintech startup that needed to visualize complex trading data.",
+      "outcome": "5K concurrent users · Sub-100ms updates"
+    },
+    "project3": {
+      "name": "Mobile PWA",
+      "role": "Frontend Architect",
+      "problem": "Designed an offline-first mobile application for field workers with unreliable connectivity.",
+      "outcome": "99.9% uptime · 60% reduction in data usage"
+    }
+  },
+  "techStack": {
+    "title": "Tech Stack",
+    "frontend": {
+      "title": "Frontend",
+      "technologies": "React, TypeScript, Next.js, Vue.js"
+    },
+    "styling": {
+      "title": "UI & Styling",
+      "technologies": "Tailwind CSS, Framer Motion, Radix UI"
+    },
+    "tooling": {
+      "title": "Tooling & Testing",
+      "technologies": "Vitest, Playwright, ESLint, Vite"
+    }
+  },
+  "experience": {
+    "teaser": "8+ years building production web applications",
+    "description": "From startups to enterprise, I've shipped products that matter.",
+    "link": "View full timeline"
+  },
+  "contact": {
+    "headline": "Let's build something great.",
+    "cta": "Get in touch"
+  },
+  "footer": {
+    "copyright": "© 2024 John Doe",
+    "builtWith": "Built with React + TypeScript",
+    "status": "Open to opportunities"
   }
 }
