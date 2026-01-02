@@ -1,0 +1,383 @@
+# Base Project React - Cursor Rules
+
+This file defines the coding standards and best practices for this React project. Follow these rules when writing or modifying code.
+
+## 📁 File & Folder Naming Conventions
+
+### Files
+
+- **ALL files** must use **kebab-case** naming convention
+- Examples: `app.tsx`, `error-boundary.tsx`, `language-context.tsx`, `service-worker.ts`
+- Test files: `app.test.tsx`, `error-boundary.test.tsx`
+- Config files with middle extensions are allowed: `babel.config.js`, `setup-vitest.d.ts`
+
+### Folders
+
+- **ALL folders** within `src/` must use **kebab-case** (except `__tests__`)
+- Examples: `components/`, `context/`, `lib/`, `pages/`, `test/`
+- Test folders: Use `__tests__` (double underscore) for test directories
+
+### Component Files
+
+- Component files should be named in kebab-case: `user-profile.tsx`, `navigation-bar.tsx`
+- Component names in code should still use PascalCase: `const UserProfile: React.FC = () => {}`
+
+## 🔤 TypeScript Standards
+
+### Strict Mode
+
+- TypeScript strict mode is **enabled** - all strict checks must pass
+- Never use `any` type - use `unknown` or proper types instead
+- Always provide explicit return types for functions
+- Use `@typescript-eslint/no-explicit-any: 'warn'` - avoid `any` whenever possible
+
+### Type Definitions
+
+- Define types in `src/types/` directory
+- Use `interface` for object shapes, `type` for unions/primitives
+- Export types from `src/types/index.ts` for shared types
+- Use `React.FC<Props>` for functional components
+- Use `ReactNode` for children props
+
+### Type Safety Rules
+
+- `noUnusedLocals: true` - remove unused variables
+- `noUnusedParameters: true` - prefix unused params with `_`
+- `strictNullChecks: true` - handle null/undefined explicitly
+- `exactOptionalPropertyTypes: true` - be explicit about optional properties
+
+## ⚛️ React Best Practices
+
+### Component Structure
+
+- Use functional components with hooks (no class components)
+- Use `React.FC<Props>` type annotation
+- Always define prop types/interfaces
+- Use `React.memo()` for performance optimization when needed
+- Keep components small and focused (single responsibility)
+
+### Hooks
+
+- Follow React Hooks rules (only call at top level)
+- Use custom hooks for reusable logic (place in `src/hooks/`)
+- Prefer `useCallback` and `useMemo` for expensive operations
+- Use `useEffect` with proper cleanup functions
+
+### State Management
+
+- Use Context API for global state (theme, language)
+- Use React Query or SWR for server state (if needed)
+- Keep local state with `useState` when appropriate
+- Avoid prop drilling - use Context or composition
+
+### Code Splitting
+
+- Use `React.lazy()` for route-based code splitting
+- Wrap lazy components in `Suspense` with fallback
+- Example: `const Home = lazy(() => import('@/pages/home'));`
+
+## 📦 Import Organization
+
+### Import Order (enforced by ESLint)
+
+1. **External dependencies** (React, third-party libraries)
+2. **Internal absolute imports** (using `@/` prefix)
+   - Order: `@/components`, `@/pages`, `@/hooks`, `@/context`, `@/lib`, `@/assets`, `@/types`
+3. **Relative imports** (parent, sibling, index)
+4. **Type imports** (use `import type` for type-only imports)
+
+### Import Rules
+
+- Always use **absolute imports** with `@/` prefix
+- Never use relative imports like `../../../components`
+- Group imports with blank lines between groups
+- Alphabetize imports within each group
+- Use `import type` for type-only imports
+
+### Example:
+
+```typescript
+import React, { Suspense, lazy } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
+
+import ErrorBoundary from '@/components/error-boundary';
+import Loading from '@/components/loading';
+
+import { LanguageProvider } from '@/context/language-context';
+import { ThemeProvider } from '@/context/theme-context';
+import '@/lib/i18n';
+
+import type { User } from '@/types';
+```
+
+## 🎨 Code Style (Prettier)
+
+### Formatting Rules
+
+- **Indentation**: 2 spaces (no tabs)
+- **Quotes**: Single quotes for strings, JSX attributes
+- **Semicolons**: Always use semicolons
+- **Line width**: 100 characters max
+- **Trailing commas**: ES5 compatible (objects, arrays)
+- **Arrow functions**: Avoid parentheses for single params: `x => x * 2`
+- **End of line**: LF (Unix-style)
+
+### Format on Save
+
+- Prettier automatically formats on save
+- If formatting fails, check for syntax errors
+
+## 🧪 Testing Standards
+
+### Test Files
+
+- Place tests in `src/__tests__/` directory
+- Name test files: `component-name.test.tsx`
+- Use `@testing-library/react` for component tests
+- Use `jest-axe` for accessibility testing
+
+### Test Structure
+
+- Use `describe` blocks to group related tests
+- Use descriptive test names: `it('should render user profile when data is loaded')`
+- Follow AAA pattern: Arrange, Act, Assert
+- Mock external dependencies (APIs, modules)
+- Clean up after tests (use `afterEach`, `afterAll`)
+
+### Test Coverage
+
+- Aim for >80% coverage on critical paths
+- Test user interactions, not implementation details
+- Use queries that reflect user behavior: `getByRole`, `getByLabelText`
+- Test error states and edge cases
+
+### Example:
+
+```typescript
+describe('UserProfile', () => {
+  it('should render user name when provided', () => {
+    render(<UserProfile name="John" />);
+    expect(screen.getByText('John')).toBeInTheDocument();
+  });
+});
+```
+
+## 🚫 ESLint Rules
+
+### Critical Rules
+
+- `@typescript-eslint/no-unused-vars`: Error (prefix unused with `_`)
+- `@typescript-eslint/no-explicit-any`: Warning (avoid `any`)
+- `@typescript-eslint/explicit-function-return-type`: Error (always specify return types)
+- `@typescript-eslint/explicit-module-boundary-types`: Error (export types)
+- `no-console`: Warning in dev, Error in production (use `console.warn`/`console.error` only)
+- `no-debugger`: Error (never commit debugger statements)
+- `prefer-const`: Error (use `const` when variable doesn't change)
+- `no-var`: Error (use `let` or `const`)
+
+### File Naming
+
+- `check-file/filename-naming-convention`: Error (enforce kebab-case)
+- `check-file/folder-naming-convention`: Error (enforce kebab-case)
+
+## 📂 Project Structure
+
+### Directory Organization
+
+```
+src/
+├── components/        # Reusable UI components
+│   ├── ui/          # Base UI primitives (button, card, input, etc.)
+│   ├── error-boundary.tsx
+│   └── loading.tsx
+├── context/         # React Context providers
+│   ├── language-context.tsx
+│   └── theme-context.tsx
+├── hooks/           # Custom React hooks
+├── lib/             # Utilities and helpers
+│   ├── i18n.ts
+│   ├── utils.ts
+│   └── service-worker.ts
+├── pages/           # Route components (page-level)
+├── test/            # Test setup and utilities
+├── types/           # TypeScript type definitions
+├── __tests__/       # Test files
+├── locales/         # Translation files
+├── app.tsx          # Main app component
+└── main.tsx         # Entry point
+```
+
+### File Organization
+
+- One component per file
+- Co-locate related files (component + test + types)
+- Export types from `src/types/index.ts` for shared types
+- Keep utility functions in `src/lib/utils.ts` or create specific files
+
+## 🔧 Git & Commit Standards
+
+### Commit Message Format (Conventional Commits)
+
+- Format: `<type>(<scope>): <description>`
+- Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`, `perf`, `ci`, `build`, `revert`
+- Examples:
+  - `feat(auth): add user login functionality`
+  - `fix(ui): correct button hover state`
+  - `refactor(components): extract common logic to hook`
+
+### Branch Naming
+
+- `main` - production branch
+- `feature/*` - new features
+- `fix/*` - bug fixes
+- `refactor/*` - code refactoring
+- `hotfix/*` - urgent production fixes
+
+### Pre-commit Hooks
+
+- ESLint runs on staged files
+- Prettier formats staged files
+- TypeScript type checking
+- Build verification
+
+### Pre-push Hooks
+
+- All tests must pass
+- Coverage check
+
+## 🎯 Code Quality Guidelines
+
+### General Principles
+
+- **DRY**: Don't Repeat Yourself - extract reusable code
+- **KISS**: Keep It Simple, Stupid - prefer simple solutions
+- **YAGNI**: You Aren't Gonna Need It - don't over-engineer
+- **SOLID**: Apply SOLID principles where applicable
+
+### Error Handling
+
+- Use Error Boundaries for React component errors
+- Handle async errors with try/catch
+- Provide user-friendly error messages
+- Log errors appropriately (development vs production)
+
+### Performance
+
+- Use `React.memo()` for expensive components
+- Use `useMemo` for expensive calculations
+- Use `useCallback` for functions passed as props
+- Lazy load routes and heavy components
+- Optimize images (lazy loading, responsive sizes)
+
+### Accessibility
+
+- Use semantic HTML elements
+- Provide ARIA labels where needed
+- Ensure keyboard navigation works
+- Test with `jest-axe` for accessibility violations
+- Maintain proper color contrast (WCAG AA minimum)
+
+### Security
+
+- Sanitize user inputs
+- Never commit secrets (use `.env` files)
+- Validate data with Zod schemas
+- Use HTTPS in production
+- Implement proper authentication/authorization
+
+## 🌐 Internationalization (i18n)
+
+### Translation Files
+
+- Store translations in `src/locales/{lang}/translation.json`
+- Use nested keys: `app.title`, `button.submit`
+- Always use translation keys, never hardcode strings
+- Support English (`en`) and Serbian (`sr`) by default
+
+### Usage
+
+```typescript
+import { useTranslation } from 'react-i18next';
+
+const { t } = useTranslation();
+// Use: t('app.title')
+```
+
+## 🎨 Styling Guidelines
+
+### Tailwind CSS
+
+- Use Tailwind utility classes for styling
+- Use `cn()` utility for conditional classes: `cn('base-class', condition && 'extra-class')`
+- Follow mobile-first responsive design
+- Use design system tokens (colors, spacing, typography)
+
+### Theme Support
+
+- Support both light and dark themes
+- Use `useTheme()` hook from `@/context/theme-context`
+- Test components in both themes
+- Use CSS variables for theme colors
+
+## 📝 Documentation
+
+### Code Comments
+
+- Write self-documenting code (clear variable/function names)
+- Add comments for complex logic or business rules
+- Use JSDoc for public APIs
+- Keep comments up-to-date with code changes
+
+### README
+
+- Keep `README.md` updated with setup instructions
+- Document environment variables
+- Include examples of common tasks
+
+## ✅ Checklist Before Committing
+
+- [ ] All ESLint errors fixed
+- [ ] Prettier formatting applied
+- [ ] TypeScript compiles without errors
+- [ ] All tests pass
+- [ ] No console.log statements (use console.warn/error if needed)
+- [ ] No debugger statements
+- [ ] File names follow kebab-case
+- [ ] Imports are properly organized
+- [ ] Commit message follows conventional commits format
+- [ ] Code is properly typed (no `any`)
+
+## 🚀 Quick Reference
+
+### Common Commands
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint errors
+- `npm run format` - Format with Prettier
+- `npm run test` - Run tests
+- `npm run test:watch` - Tests in watch mode
+- `npm run test:coverage` - Generate coverage report
+- `npm run type-check` - TypeScript type checking
+
+### Creating New Components
+
+1. Create file in appropriate directory: `src/components/my-component.tsx`
+2. Use kebab-case for filename
+3. Export component with proper types
+4. Create test file: `src/__tests__/my-component.test.tsx`
+5. Add to exports if needed
+
+### Creating New Hooks
+
+1. Create file: `src/hooks/use-my-hook.ts`
+2. Use kebab-case for filename
+3. Prefix hook name with `use`
+4. Return typed object/array
+5. Create test file if needed
+
+---
+
+**Remember**: These rules are enforced by ESLint, Prettier, TypeScript, and Husky hooks. The build will fail if these standards are not met.
+

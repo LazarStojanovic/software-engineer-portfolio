@@ -1,0 +1,28 @@
+echo "🔍 Running pre-commit checks..."
+
+# Run type check
+echo "📝 Type checking..."
+npm run type-check
+if [ $? -ne 0 ]; then
+  echo "❌ Type check failed. Commit aborted."
+  exit 1
+fi
+
+# Run lint-staged (linting and formatting)
+echo "🧹 Linting and formatting staged files..."
+npx --no-install lint-staged
+if [ $? -ne 0 ]; then
+  echo "❌ Linting failed. Commit aborted."
+  exit 1
+fi
+
+# Run build to ensure everything compiles
+echo "🏗️  Building project..."
+npm run build
+if [ $? -ne 0 ]; then
+  echo "❌ Build failed. Commit aborted."
+  exit 1
+fi
+
+echo "✅ All pre-commit checks passed!"
+

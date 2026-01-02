@@ -1,0 +1,20 @@
+{
+  "app": {
+    "title": "Osnovni Projekat",
+    "description": "Moderan React šablon projekta sa TypeScript-om, Tailwind CSS-om i još mnogo toga."
+  },
+  "common": {
+    "loading": "Učitavanje...",
+    "error": "Došlo je do greške",
+    "retry": "Pokušaj ponovo"
+  },
+  "theme": {
+    "light": "Svetlo",
+    "dark": "Tamno",
+    "system": "Sistem"
+  },
+  "language": {
+    "en": "Engleski",
+    "sr": "Srpski"
+  }
+}

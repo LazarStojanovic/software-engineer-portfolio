@@ -1,0 +1,20 @@
+{
+  "app": {
+    "title": "Base Project",
+    "description": "A modern React project template with TypeScript, Tailwind CSS, and more."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Try again"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "language": {
+    "en": "English",
+    "sr": "Serbian"
+  }
+}

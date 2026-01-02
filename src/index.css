@@ -1,0 +1,571 @@
+/* =============================================================================
+   UNIFIED DESIGN SYSTEM - Blogotara
+   Single source of truth for all colors, spacing, and design tokens
+   ============================================================================= */
+
+@import 'tailwindcss';
+@plugin "tailwindcss-animate";
+@variant dark (&:is(.dark *));
+
+/* =============================================================================
+   DESIGN TOKENS - Core design system variables
+   ============================================================================= */
+
+@theme {
+  /* Brand Colors - Primary palette */
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+
+  /* Accent Colors - Secondary brand palette */
+  --color-accent-50: #fef7ff;
+  --color-accent-100: #fceeff;
+  --color-accent-200: #f8ddff;
+  --color-accent-300: #f2bbff;
+  --color-accent-400: #e879f9;
+  --color-accent-500: #d946ef;
+  --color-accent-600: #c026d3;
+  --color-accent-700: #a21caf;
+  --color-accent-800: #86198f;
+  --color-accent-900: #701a75;
+
+  /* Neutral Colors - Grayscale palette */
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
+
+  /* Semantic Colors */
+  --color-success-500: #22c55e;
+  --color-warning-500: #f59e0b;
+  --color-error-500: #ef4444;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+
+  /* Spacing & Layout */
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+  --spacing-128: 32rem;
+  --radius: 1rem;
+
+  /* Shadows */
+  --shadow-soft: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+  --shadow-medium: 0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-large: 0 10px 40px -10px rgba(0, 0, 0, 0.1), 0 2px 10px -2px rgba(0, 0, 0, 0.04);
+
+  /* Dark Theme Specific Colors - Used by existing components */
+  --color-dark-bg-primary: #0a0a0a;
+  --color-dark-bg-secondary: #111111;
+  --color-dark-bg-tertiary: #1a1a1a;
+  --color-dark-bg-elevated: #262626;
+  --color-dark-bg-surface: #1e1e1e;
+  --color-dark-text-primary: #ffffff;
+  --color-dark-text-secondary: #e5e5e5;
+  --color-dark-text-tertiary: #a3a3a3;
+  --color-dark-text-muted: #737373;
+  --color-dark-text-disabled: #525252;
+
+  /* Unified Color Mapping - Maps design tokens to semantic usage */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+}
+
+/* =============================================================================
+   SEMANTIC COLOR SYSTEM - Light Theme
+   ============================================================================= */
+
+:root {
+  /* Core semantic colors */
+  --background: 0 0% 100%;
+  --foreground: 0 0% 9%;
+
+  /* Interactive surfaces */
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 9%;
+
+  /* Brand colors */
+  --primary: 200 100% 50%;
+  --primary-foreground: 210 40% 98%;
+
+  /* UI colors */
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 9%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 32%;
+  --accent: 0 0% 96%;
+  --accent-foreground: 0 0% 9%;
+
+  /* Form elements */
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 200 100% 50%;
+
+  /* Status colors */
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+}
+
+/* =============================================================================
+   SEMANTIC COLOR SYSTEM - Dark Theme
+   ============================================================================= */
+
+.dark {
+  /* Core semantic colors */
+  --background: 0 0% 4%;
+  --foreground: 0 0% 100%;
+
+  /* Interactive surfaces */
+  --card: 0 0% 12%;
+  --card-foreground: 0 0% 100%;
+  --popover: 0 0% 12%;
+  --popover-foreground: 0 0% 100%;
+
+  /* Brand colors */
+  --primary: 200 100% 50%;
+  --primary-foreground: 210 40% 98%;
+
+  /* UI colors */
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 64%;
+  --accent: 0 0% 15%;
+  --accent-foreground: 0 0% 100%;
+
+  /* Form elements */
+  --border: 0 0% 15%;
+  --input: 0 0% 15%;
+  --ring: 200 100% 50%;
+
+  /* Status colors */
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+}
+
+/* =============================================================================
+   BASE STYLES
+   ============================================================================= */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: hsl(var(--foreground));
+    background-color: hsl(var(--background));
+    font-display: swap;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+}
+
+/* =============================================================================
+   COMPONENT STYLES
+   ============================================================================= */
+
+@layer components {
+  /* Typography Components */
+  .page-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .page-title {
+      font-size: 3rem;
+      line-height: 1;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .page-title {
+      font-size: 3.75rem;
+      line-height: 1;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .page-title {
+      font-size: 4.5rem;
+      line-height: 1;
+    }
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .section-title {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-title {
+      font-size: 3rem;
+      line-height: 1;
+    }
+  }
+
+  /* Button Components */
+  .btn-primary {
+    background-color: var(--color-primary-600);
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    transition: all 0.3s;
+    box-shadow: var(--shadow-medium);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-primary-700);
+    box-shadow: var(--shadow-large);
+    transform: scale(1.05);
+  }
+
+  .btn-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-primary-500);
+  }
+
+  .btn-outline {
+    border: 2px solid var(--color-primary-600);
+    color: var(--color-primary-600);
+    background-color: transparent;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    transition: all 0.3s;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-primary-600);
+    color: white;
+  }
+
+  /* Card Components */
+  .card {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    border-radius: 1rem;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s;
+    border: 1px solid hsl(var(--border));
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .card-hover {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    border-radius: 1rem;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s;
+    border: 1px solid hsl(var(--border));
+  }
+
+  .card-hover:hover {
+    box-shadow: var(--shadow-medium);
+    transform: scale(1.05) translateY(-0.25rem);
+  }
+
+  .card-elevated {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    border: 1px solid hsl(var(--border));
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-medium);
+    transition: all 0.3s ease;
+  }
+
+  .card-elevated:hover {
+    box-shadow: var(--shadow-large);
+    transform: translateY(-2px);
+  }
+
+  /* Layout Components */
+  .section-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .section-padding {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  .container-max {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Visual Effects */
+  .gradient-text {
+    background-image: linear-gradient(to right, var(--color-primary-600), var(--color-accent-600));
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gradient-bg {
+    background-image: linear-gradient(
+      to bottom right,
+      var(--color-primary-50),
+      var(--color-accent-50)
+    );
+  }
+
+  .dark .gradient-bg {
+    background-image: linear-gradient(
+      to bottom right,
+      var(--color-neutral-800),
+      var(--color-neutral-900)
+    );
+  }
+
+  /* Background Effects for Hero Section */
+  .hero-bg-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-effect::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      from 0deg at 50% 50%,
+      var(--color-primary-200),
+      var(--color-accent-200),
+      var(--color-neutral-200),
+      var(--color-primary-200)
+    );
+    animation: rotate 20s linear infinite;
+    opacity: 0.1;
+    z-index: -1;
+  }
+
+  .dark .hero-bg-effect::before {
+    background: conic-gradient(
+      from 0deg at 50% 50%,
+      var(--color-primary-800),
+      var(--color-accent-800),
+      var(--color-neutral-800),
+      var(--color-primary-800)
+    );
+    opacity: 0.05;
+  }
+
+  .backdrop-blur-glass {
+    backdrop-filter: blur(16px) saturate(180%);
+    background-color: hsla(var(--background), 0.8);
+    border: 1px solid hsl(var(--border));
+  }
+
+  /* Animation Classes */
+  .animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out;
+  }
+
+  .animate-bounce-subtle {
+    animation: bounce-subtle 2s infinite;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 12s ease-in-out infinite;
+  }
+
+  .animate-spin-slower {
+    animation: spin 30s linear infinite;
+  }
+
+  /* Hero Section Background Effects */
+  .bg-conic-hero {
+    background: conic-gradient(
+      from 0deg,
+      var(--color-primary-400),
+      var(--color-accent-400),
+      var(--color-neutral-400),
+      var(--color-primary-400)
+    );
+  }
+
+  /* Utility Classes */
+  footer {
+    margin-top: auto;
+  }
+
+  main {
+    min-height: 50vh;
+  }
+}
+
+/* =============================================================================
+   ANIMATIONS
+   ============================================================================= */
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-subtle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes float-slow {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate3d(6px, -8px, 0) rotate(1deg) scale(1.01);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
