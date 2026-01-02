@@ -1,15 +1,18 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
 
   const socialLinks = [
     { name: 'GitHub', href: 'https://github.com', icon: Github },
-    { name: 'LinkedIn', href: 'https://linkedin.com', icon: Linkedin },
-    { name: 'Twitter', href: 'https://twitter.com', icon: Twitter },
-    { name: 'Email', href: 'mailto:hello@example.com', icon: Mail },
+    {
+      name: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/lazar-stojanovic-7409051ba',
+      icon: Linkedin,
+    },
+    { name: 'Email', href: 'mailto:stojanovic.lazar.lazar@gmail.com', icon: Mail },
   ];
 
   return (

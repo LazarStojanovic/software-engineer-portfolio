@@ -101,6 +101,7 @@ export interface CaseStudy {
   title: string;
   role: string;
   duration: string;
+  company?: string;
   thumbnail?: string;
 
   // The story

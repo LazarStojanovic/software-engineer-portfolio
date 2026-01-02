@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "John Doe - Frontend Inženjer",
-    "description": "Senior Frontend Inženjer specijalizovan za React, TypeScript i skalabilne web aplikacije."
+    "title": "Lazar Stojanović - Softver Inženjer",
+    "description": "Softver Inženjer sa 5+ godina iskustva u React, Angular i TypeScript."
   },
   "common": {
     "loading": "Učitavanje...",
@@ -24,11 +24,11 @@
     "contact": "Kontakt"
   },
   "hero": {
-    "name": "John Doe",
-    "role": "Senior Frontend Inženjer",
-    "valueProp": "Isporučujem produkcijske React aplikacije koje skaliraju do 100K+ korisnika.",
-    "subtitle": "Specijalizovan za kompleksnu vizualizaciju podataka, real-time sisteme i optimizaciju performansi.",
-    "credibility": "8+ godina · Prethodno u Tech Startup Inc.",
+    "name": "Lazar Stojanović",
+    "role": "Softver Inženjer",
+    "valueProp": "Gradim i vodim frontend timove koji isporučuju kvalitetne proizvode.",
+    "subtitle": "Specijalizovan za React, Angular i TypeScript. Strastven za mentorstvo i vođenje timova.",
+    "credibility": "5+ godina · Trenutno u Symphony · Prethodno HTEC Group",
     "cta": {
       "primary": "Pogledaj radove",
       "secondary": "Kontaktiraj me"
@@ -42,42 +42,42 @@
     "title": "Istaknuti Radovi",
     "viewAll": "Pogledaj sve projekte",
     "project1": {
-      "name": "E-Commerce Platforma",
-      "role": "Vodeći Frontend Inženjer",
-      "problem": "Rekonstruisao checkout tok za e-commerce platformu sa visokim prometom koja se borila sa napuštanjem korpe i sporim učitavanjem.",
-      "outcome": "40% brže učitavanje · 25% povećanje konverzija"
+      "name": "Finansijska Platforma",
+      "role": "Frontend Lead",
+      "problem": "Vodim frontend razvoj za platformu finansijskih usluga sa kompleksnim zahtevima podataka.",
+      "outcome": "Moderan stack · Kompletna dokumentacija"
     },
     "project2": {
-      "name": "Analytics Dashboard",
-      "role": "Senior Frontend Developer",
-      "problem": "Izgradio real-time analytics dashboard za fintech startup koji je trebao vizualizovati kompleksne trading podatke.",
-      "outcome": "5K istovremenih korisnika · Ažuriranja ispod 100ms"
+      "name": "Telekomunikaciona Platforma",
+      "role": "Softver Inženjer",
+      "problem": "Izgradio i održavao veliku telekomunikacionu platformu sa micro-frontend arhitekturom.",
+      "outcome": "Enterprise skala · Grafana monitoring"
     },
     "project3": {
-      "name": "Mobilna PWA",
-      "role": "Frontend Arhitekta",
-      "problem": "Dizajnirao offline-first mobilnu aplikaciju za terenske radnike sa nepouzdanom konekcijom.",
-      "outcome": "99.9% uptime · 60% smanjenje potrošnje podataka"
+      "name": "Healthcare UI Biblioteka",
+      "role": "Feature Lead",
+      "problem": "Razvio kompletnu UI komponentnu biblioteku koristeći Radix za zdravstvene aplikacije.",
+      "outcome": "Industrijski standardi · Višekratne komponente"
     }
   },
   "techStack": {
     "title": "Tehnologije",
     "frontend": {
       "title": "Frontend",
-      "technologies": "React, TypeScript, Next.js, Vue.js"
+      "technologies": "React, Angular, Next.js, TypeScript"
     },
     "styling": {
-      "title": "UI & Styling",
-      "technologies": "Tailwind CSS, Framer Motion, Radix UI"
+      "title": "State & Podaci",
+      "technologies": "Redux, RxJs, Jest, Grafana"
     },
     "tooling": {
-      "title": "Alati & Testiranje",
-      "technologies": "Vitest, Playwright, ESLint, Vite"
+      "title": "Alati & Liderstvo",
+      "technologies": "Git, Mentorstvo, Intervjuisanje, Vođenje Tima"
     }
   },
   "experience": {
-    "teaser": "8+ godina izgradnje produkcijskih web aplikacija",
-    "description": "Od startupa do enterprise, isporučujem proizvode koji su bitni.",
+    "teaser": "5+ godina izgradnje produkcijskih web aplikacija",
+    "description": "Od zdravstva do telekomunikacija, vodio sam timove i isporučivao proizvode koji su bitni.",
     "link": "Pogledaj punu istoriju"
   },
   "contact": {
@@ -85,7 +85,7 @@
     "cta": "Kontaktiraj me"
   },
   "footer": {
-    "copyright": "© 2024 John Doe",
+    "copyright": "© 2025 Lazar Stojanović",
     "builtWith": "Napravljeno sa React + TypeScript",
     "status": "Otvoren za prilike"
   }

@@ -38,12 +38,12 @@ const Contact: React.FC = () => {
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com',
+      url: 'https://www.linkedin.com/in/lazar-stojanovic-7409051ba',
       icon: Linkedin,
     },
     {
       name: 'Email',
-      url: 'mailto:hello@example.com',
+      url: 'mailto:stojanovic.lazar.lazar@gmail.com',
       icon: Mail,
     },
   ];

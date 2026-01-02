@@ -3,19 +3,59 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { ArrowLeft, ExternalLink, Github, Clock, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, ShieldAlert, ChevronDown, Building2 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
+import {
+  Timeline,
+  TimelineItem,
+  TimelinePoint,
+  TimelineDate,
+  TimelineContent,
+  TimelineTitle,
+  TimelineDescription,
+} from '@/components/ui/timeline';
 import { caseStudies } from '@/data/projects';
+import type { CaseStudy } from '@/types';
+
+interface ProjectGroup {
+  company: string;
+  period: string;
+  projects: CaseStudy[];
+}
 
 const Projects: React.FC = () => {
   const { t } = useTranslation();
+  const [expandedId, setExpandedId] = React.useState<string | null>(null);
 
   const prefersReducedMotion =
     typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const toggleExpand = (id: string): void => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
+  // Group projects by company for timeline
+  const projectGroups: ProjectGroup[] = [
+    {
+      company: 'Symphony',
+      period: '2025 - Present',
+      projects: caseStudies.filter(p => p.company === 'Symphony'),
+    },
+    {
+      company: 'HTEC Group',
+      period: '2020 - 2025',
+      projects: caseStudies.filter(p => p.company === 'HTEC'),
+    },
+    {
+      company: 'HEFES Technology Group',
+      period: '2022 - 2024',
+      projects: caseStudies.filter(p => p.company === 'HEFES'),
+    },
+  ];
 
   return (
     <>
@@ -28,10 +68,12 @@ const Projects: React.FC = () => {
 
       <div className='min-h-screen pt-24 pb-16 bg-background'>
         <div className='container-max section-padding'>
+          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: prefersReducedMotion ? 0 : 0.5 }}
+            className='mb-12'
           >
             <Button asChild variant='ghost' className='mb-8'>
               <Link to='/'>
@@ -40,178 +82,251 @@ const Projects: React.FC = () => {
               </Link>
             </Button>
 
-            <h1 className='page-title text-foreground mb-4'>{t('projects.title')}</h1>
-            <p className='text-xl text-muted-foreground mb-12 max-w-2xl'>
-              Deep dives into projects I've led, including technical decisions, challenges faced,
-              and measurable outcomes.
-            </p>
+            <div className='grid grid-cols-1 lg:grid-cols-[1fr,auto] gap-6 items-center'>
+              <div>
+                <h1 className='page-title text-foreground mb-2'>{t('projects.title')}</h1>
+                <p className='text-lg text-muted-foreground max-w-xl'>
+                  A timeline of {caseStudies.length} projects across healthcare, telecommunications,
+                  government, and fintech sectors.
+                </p>
+              </div>
+
+              {/* NDA Disclaimer */}
+              <div className='flex items-center gap-3 px-4 py-3 rounded-xl bg-amber-500/10 border border-amber-500/20 lg:w-80'>
+                <ShieldAlert className='h-5 w-5 text-amber-500 shrink-0' />
+                <p className='text-sm text-muted-foreground'>
+                  Project names obfuscated due to NDA. Technical details are accurate.
+                </p>
+              </div>
+            </div>
           </motion.div>
 
-          <div className='space-y-16'>
-            {caseStudies.map((project, index) => (
-              <motion.article
-                key={project.id}
-                id={project.slug}
-                initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: prefersReducedMotion ? 0 : 0.5,
-                  delay: prefersReducedMotion ? 0 : index * 0.1,
-                }}
-                className='scroll-mt-24'
-              >
-                <Card className='overflow-hidden'>
-                  <div className='grid lg:grid-cols-3 gap-0'>
-                    {/* Project Preview */}
-                    <div className='bg-gradient-to-br from-primary/10 via-primary/5 to-accent-500/5 aspect-video lg:aspect-auto lg:min-h-[400px] flex items-center justify-center border-b lg:border-b-0 lg:border-r border-border relative overflow-hidden'>
-                      <div className='absolute inset-0 bg-grid-pattern opacity-10' />
-                      <div className='relative text-center p-8'>
-                        <div className='text-7xl font-display font-bold text-primary/20 mb-2'>
-                          {String(index + 1).padStart(2, '0')}
-                        </div>
-                        <div className='text-sm text-muted-foreground font-medium'>Case Study</div>
-                      </div>
-                    </div>
+          {/* Timeline */}
+          <div className='max-w-4xl mx-auto'>
+            <Timeline>
+              {projectGroups.map((group, groupIndex) => {
+                return (
+                  <React.Fragment key={group.company}>
+                    {/* Company Header */}
+                    <TimelineItem>
+                      <TimelineDate className='hidden md:block '>{group.period}</TimelineDate>
+                      <TimelinePoint variant='primary' size='lg'>
+                        <Building2 className='h-4 w-4 text-primary-foreground' />
+                      </TimelinePoint>
+                      <TimelineContent>
+                        <motion.div
+                          initial={{ opacity: 0, x: prefersReducedMotion ? 0 : -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{
+                            duration: prefersReducedMotion ? 0 : 0.5,
+                            delay: prefersReducedMotion ? 0 : groupIndex * 0.1,
+                          }}
+                        >
+                          <TimelineTitle className='text-xl font-display'>
+                            {group.company}
+                          </TimelineTitle>
+                          <TimelineDescription>
+                            <span className='md:hidden'>{group.period} · </span>
+                            {group.projects.length} project{group.projects.length > 1 ? 's' : ''}
+                          </TimelineDescription>
+                        </motion.div>
+                      </TimelineContent>
+                    </TimelineItem>
 
-                    {/* Content */}
-                    <div className='lg:col-span-2 p-8 lg:p-10'>
-                      <CardHeader className='p-0 mb-6'>
-                        <div className='flex flex-wrap items-center gap-3 mb-4'>
-                          <Badge variant='secondary'>{project.role}</Badge>
-                          <div className='flex items-center gap-1 text-sm text-muted-foreground'>
-                            <Clock className='h-4 w-4' />
-                            {project.duration}
-                          </div>
-                        </div>
+                    {/* Projects */}
+                    {group.projects.map((project, projectIndex) => {
+                      const isExpanded = expandedId === project.id;
+                      const globalIndex = caseStudies.findIndex(p => p.id === project.id);
 
-                        <div className='flex items-start justify-between gap-4'>
-                          <CardTitle className='text-2xl md:text-3xl'>{project.title}</CardTitle>
-                          <div className='flex gap-2 shrink-0'>
-                            {project.liveUrl && (
-                              <Button variant='ghost' size='icon' asChild>
-                                <a
-                                  href={project.liveUrl}
-                                  target='_blank'
-                                  rel='noopener noreferrer'
-                                  aria-label='View live site'
+                      return (
+                        <TimelineItem key={project.id} id={project.slug} className='scroll-mt-24'>
+                          <TimelineDate className='text-muted-foreground font-normal text-xs pt-3'>
+                            {project.duration.replace('Contract Period', 'Contract')}
+                          </TimelineDate>
+                          <TimelinePoint variant='outline' size='sm' className='mt-3' />
+                          <TimelineContent>
+                            <motion.article
+                              initial={{ opacity: 0, x: prefersReducedMotion ? 0 : -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{
+                                duration: prefersReducedMotion ? 0 : 0.4,
+                                delay: prefersReducedMotion
+                                  ? 0
+                                  : groupIndex * 0.1 + projectIndex * 0.05,
+                              }}
+                            >
+                              <Card className='overflow-hidden hover:shadow-medium transition-shadow'>
+                                <button
+                                  onClick={() => toggleExpand(project.id)}
+                                  className='w-full text-left'
+                                  aria-expanded={isExpanded}
                                 >
-                                  <ExternalLink className='h-4 w-4' />
-                                </a>
-                              </Button>
-                            )}
-                            {project.githubUrl && (
-                              <Button variant='ghost' size='icon' asChild>
-                                <a
-                                  href={project.githubUrl}
-                                  target='_blank'
-                                  rel='noopener noreferrer'
-                                  aria-label='View source code'
-                                >
-                                  <Github className='h-4 w-4' />
-                                </a>
-                              </Button>
-                            )}
-                          </div>
-                        </div>
-                      </CardHeader>
+                                  <CardHeader className='p-4'>
+                                    <div className='flex items-start justify-between gap-3'>
+                                      <div className='flex items-start gap-3 flex-1 min-w-0'>
+                                        <div className='w-8 h-8 rounded-lg bg-muted flex items-center justify-center shrink-0'>
+                                          <span className='text-xs font-bold text-muted-foreground'>
+                                            {String(globalIndex + 1).padStart(2, '0')}
+                                          </span>
+                                        </div>
 
-                      <CardContent className='p-0 space-y-6'>
-                        {/* Context & Problem */}
-                        <div className='space-y-4'>
-                          <div>
-                            <h3 className='text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2'>
-                              Context
-                            </h3>
-                            <p className='text-foreground'>{project.context}</p>
-                          </div>
-                          <div>
-                            <h3 className='text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2'>
-                              The Problem
-                            </h3>
-                            <p className='text-foreground'>{project.problem}</p>
-                          </div>
-                        </div>
+                                        <div className='min-w-0 flex-1'>
+                                          <div className='flex flex-wrap items-center gap-2 mb-1'>
+                                            <Badge variant='secondary' className='text-xs'>
+                                              {project.role}
+                                            </Badge>
+                                            <span className='text-xs text-muted-foreground md:hidden'>
+                                              {project.duration.replace('Contract Period', '')}
+                                            </span>
+                                          </div>
+                                          <CardTitle className='text-base md:text-lg mb-1'>
+                                            {project.title}
+                                          </CardTitle>
+                                          {!isExpanded && (
+                                            <div className='flex flex-wrap gap-1.5 mt-2'>
+                                              {project.techStack.slice(0, 4).map(tech => (
+                                                <Badge
+                                                  key={tech}
+                                                  variant='outline'
+                                                  className='text-xs'
+                                                >
+                                                  {tech}
+                                                </Badge>
+                                              ))}
+                                              {project.techStack.length > 4 && (
+                                                <Badge variant='outline' className='text-xs'>
+                                                  +{project.techStack.length - 4}
+                                                </Badge>
+                                              )}
+                                            </div>
+                                          )}
+                                        </div>
+                                      </div>
 
-                        <Separator />
+                                      <ChevronDown
+                                        className={`h-5 w-5 text-muted-foreground shrink-0 transition-transform duration-200 ${
+                                          isExpanded ? 'rotate-180' : ''
+                                        }`}
+                                      />
+                                    </div>
+                                  </CardHeader>
+                                </button>
 
-                        {/* Approach */}
-                        <div>
-                          <h3 className='text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3'>
-                            Approach
-                          </h3>
-                          <ul className='space-y-2'>
-                            {project.approach.map((step, i) => (
-                              <li key={i} className='flex items-start gap-3'>
-                                <CheckCircle2 className='h-5 w-5 text-primary shrink-0 mt-0.5' />
-                                <span className='text-muted-foreground'>{step}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                                {isExpanded && (
+                                  <motion.div
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: 'auto' }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                    transition={{ duration: prefersReducedMotion ? 0 : 0.3 }}
+                                  >
+                                    <Separator />
+                                    <CardContent className='p-4 space-y-5'>
+                                      <div className='grid md:grid-cols-2 gap-4'>
+                                        <div>
+                                          <h3 className='text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2'>
+                                            Context
+                                          </h3>
+                                          <p className='text-sm text-foreground'>
+                                            {project.context}
+                                          </p>
+                                        </div>
+                                        <div>
+                                          <h3 className='text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2'>
+                                            Challenge
+                                          </h3>
+                                          <p className='text-sm text-foreground'>
+                                            {project.problem}
+                                          </p>
+                                        </div>
+                                      </div>
 
-                        <Separator />
+                                      <div>
+                                        <h3 className='text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2'>
+                                          Approach
+                                        </h3>
+                                        <ul className='grid md:grid-cols-2 gap-2'>
+                                          {project.approach.map((step, i) => (
+                                            <li key={i} className='flex items-start gap-2'>
+                                              <CheckCircle2 className='h-4 w-4 text-primary shrink-0 mt-0.5' />
+                                              <span className='text-sm text-muted-foreground'>
+                                                {step}
+                                              </span>
+                                            </li>
+                                          ))}
+                                        </ul>
+                                      </div>
 
-                        {/* Outcomes */}
-                        <div>
-                          <h3 className='text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-4'>
-                            Outcomes
-                          </h3>
-                          <div className='grid grid-cols-3 gap-4'>
-                            {project.outcomes.map((outcome, i) => (
-                              <div
-                                key={i}
-                                className='text-center p-4 rounded-xl bg-muted/50 border border-border'
-                              >
-                                <div className='text-2xl font-bold text-primary mb-1'>
-                                  {outcome.value}
-                                </div>
-                                <div className='text-xs text-muted-foreground uppercase tracking-wide'>
-                                  {outcome.metric}
-                                </div>
-                                {outcome.description && (
-                                  <div className='text-xs text-muted-foreground mt-1'>
-                                    {outcome.description}
-                                  </div>
+                                      <div>
+                                        <h3 className='text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2'>
+                                          Outcomes
+                                        </h3>
+                                        <div className='flex flex-wrap gap-3'>
+                                          {project.outcomes.map((outcome, i) => (
+                                            <div
+                                              key={i}
+                                              className='px-4 py-2 rounded-lg bg-muted/50 border border-border'
+                                            >
+                                              <span className='font-semibold text-primary'>
+                                                {outcome.value}
+                                              </span>
+                                              <span className='text-sm text-muted-foreground ml-1'>
+                                                {outcome.metric.toLowerCase()}
+                                              </span>
+                                            </div>
+                                          ))}
+                                        </div>
+                                      </div>
+
+                                      <div>
+                                        <h3 className='text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2'>
+                                          Key Decisions
+                                        </h3>
+                                        <div className='space-y-2'>
+                                          {project.technicalDecisions.map((td, i) => (
+                                            <div
+                                              key={i}
+                                              className='bg-muted/30 rounded-lg p-3 border border-border'
+                                            >
+                                              <p className='font-medium text-sm text-foreground'>
+                                                {td.decision}
+                                              </p>
+                                              <p className='text-xs text-muted-foreground mt-1'>
+                                                {td.rationale}
+                                              </p>
+                                            </div>
+                                          ))}
+                                        </div>
+                                      </div>
+
+                                      <div className='flex flex-wrap gap-2 pt-2'>
+                                        {project.techStack.map(tech => (
+                                          <Badge key={tech} variant='outline'>
+                                            {tech}
+                                          </Badge>
+                                        ))}
+                                      </div>
+                                    </CardContent>
+                                  </motion.div>
                                 )}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
+                              </Card>
+                            </motion.article>
+                          </TimelineContent>
+                        </TimelineItem>
+                      );
+                    })}
+                  </React.Fragment>
+                );
+              })}
 
-                        <Separator />
-
-                        {/* Technical Decisions */}
-                        <div>
-                          <h3 className='text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3'>
-                            Key Technical Decisions
-                          </h3>
-                          <div className='space-y-3'>
-                            {project.technicalDecisions.map((td, i) => (
-                              <div
-                                key={i}
-                                className='bg-muted/30 rounded-lg p-4 border border-border'
-                              >
-                                <p className='font-medium text-foreground mb-1'>{td.decision}</p>
-                                <p className='text-sm text-muted-foreground'>{td.rationale}</p>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Tech Stack */}
-                        <div className='flex flex-wrap gap-2 pt-2'>
-                          {project.techStack.map(tech => (
-                            <Badge key={tech} variant='outline'>
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </div>
-                  </div>
-                </Card>
-              </motion.article>
-            ))}
+              {/* End marker */}
+              <TimelineItem>
+                <TimelineDate className='text-muted-foreground font-normal'>2020</TimelineDate>
+                <TimelinePoint size='sm' />
+                <TimelineContent>
+                  <span className='text-sm text-muted-foreground pt-1 block'>Career start</span>
+                </TimelineContent>
+              </TimelineItem>
+            </Timeline>
           </div>
         </div>
       </div>

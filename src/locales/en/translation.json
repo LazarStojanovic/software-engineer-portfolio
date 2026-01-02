@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "John Doe - Frontend Engineer",
-    "description": "Senior Frontend Engineer specializing in React, TypeScript, and scalable web applications."
+    "title": "Lazar Stojanović - Software Engineer",
+    "description": "Software Engineer with 5+ years of experience in React, Angular, and TypeScript."
   },
   "common": {
     "loading": "Loading...",
@@ -24,11 +24,11 @@
     "contact": "Contact"
   },
   "hero": {
-    "name": "John Doe",
-    "role": "Senior Frontend Engineer",
-    "valueProp": "I ship production React applications that scale to 100K+ users.",
-    "subtitle": "Specializing in complex data visualization, real-time systems, and performance optimization.",
-    "credibility": "8+ years · Previously at Tech Startup Inc.",
+    "name": "Lazar Stojanović",
+    "role": "Software Engineer",
+    "valueProp": "I build and lead frontend teams that deliver high-quality products.",
+    "subtitle": "Specializing in React, Angular, and TypeScript. Passionate about mentoring and team leadership.",
+    "credibility": "5+ years · Currently at Symphony · Previously HTEC Group",
     "cta": {
       "primary": "See my work",
       "secondary": "Let's talk"
@@ -42,42 +42,42 @@
     "title": "Featured Work",
     "viewAll": "View all projects",
     "project1": {
-      "name": "E-Commerce Platform",
-      "role": "Lead Frontend Engineer",
-      "problem": "Rebuilt checkout flow for a high-traffic e-commerce platform struggling with cart abandonment and slow load times.",
-      "outcome": "40% faster load time · 25% increase in conversions"
+      "name": "Financial Platform",
+      "role": "Frontend Lead",
+      "problem": "Leading frontend development for a financial services platform with complex data requirements.",
+      "outcome": "Modern stack · Full documentation"
     },
     "project2": {
-      "name": "Analytics Dashboard",
-      "role": "Senior Frontend Developer",
-      "problem": "Built a real-time analytics dashboard for a fintech startup that needed to visualize complex trading data.",
-      "outcome": "5K concurrent users · Sub-100ms updates"
+      "name": "Telecommunications Platform",
+      "role": "Software Engineer",
+      "problem": "Built and maintained a major telecommunications platform with micro-frontend architecture.",
+      "outcome": "Enterprise scale · Grafana monitoring"
     },
     "project3": {
-      "name": "Mobile PWA",
-      "role": "Frontend Architect",
-      "problem": "Designed an offline-first mobile application for field workers with unreliable connectivity.",
-      "outcome": "99.9% uptime · 60% reduction in data usage"
+      "name": "Healthcare UI Library",
+      "role": "Feature Lead",
+      "problem": "Developed a complete UI component library using Radix for healthcare applications.",
+      "outcome": "Industry standards · Reusable components"
     }
   },
   "techStack": {
     "title": "Tech Stack",
     "frontend": {
       "title": "Frontend",
-      "technologies": "React, TypeScript, Next.js, Vue.js"
+      "technologies": "React, Angular, Next.js, TypeScript"
     },
     "styling": {
-      "title": "UI & Styling",
-      "technologies": "Tailwind CSS, Framer Motion, Radix UI"
+      "title": "State & Data",
+      "technologies": "Redux, RxJs, Jest, Grafana"
     },
     "tooling": {
-      "title": "Tooling & Testing",
-      "technologies": "Vitest, Playwright, ESLint, Vite"
+      "title": "Tooling & Leadership",
+      "technologies": "Git, Mentoring, Interviewing, Team Leading"
     }
   },
   "experience": {
-    "teaser": "8+ years building production web applications",
-    "description": "From startups to enterprise, I've shipped products that matter.",
+    "teaser": "5+ years building production web applications",
+    "description": "From healthcare to telecommunications, I've led teams and shipped products that matter.",
     "link": "View full timeline"
   },
   "contact": {
@@ -85,7 +85,7 @@
     "cta": "Get in touch"
   },
   "footer": {
-    "copyright": "© 2024 John Doe",
+    "copyright": "© 2025 Lazar Stojanović",
     "builtWith": "Built with React + TypeScript",
     "status": "Open to opportunities"
   }

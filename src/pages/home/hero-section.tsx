@@ -130,7 +130,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               {/* Avatar placeholder */}
               <div className='w-64 h-64 xl:w-80 xl:h-80 rounded-full bg-gradient-to-br from-primary/20 via-accent-500/20 to-primary/10 flex items-center justify-center border border-border/50 shadow-large'>
                 <div className='text-6xl xl:text-7xl font-display font-bold text-primary/60'>
-                  JD
+                  LS
                 </div>
               </div>
             </div>
