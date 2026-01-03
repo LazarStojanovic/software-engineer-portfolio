@@ -1,6 +1,7 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 
 import { caseStudies } from '@/data/projects';
 
@@ -11,9 +12,44 @@ import { PageHeader, TimelineLegend, YearGroup, CareerStartMarker } from './comp
 const sortedProjects = sortProjects(caseStudies);
 const yearGroups = groupByYear(sortedProjects);
 
+// Helper to get initial expanded ID from URL hash
+const getInitialExpandedId = (hash: string): string | null => {
+  const slug = hash.replace('#', '');
+  if (slug) {
+    const project = caseStudies.find(p => p.slug === slug);
+    return project?.id ?? null;
+  }
+  return null;
+};
+
 const Projects: React.FC = () => {
   const { t } = useTranslation();
-  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const location = useLocation();
+  const [expandedId, setExpandedId] = useState<string | null>(() =>
+    getInitialExpandedId(location.hash)
+  );
+
+  // Handle URL hash changes for scrolling and expanding
+  useEffect(() => {
+    const hash = location.hash.replace('#', '');
+    if (hash) {
+      const project = caseStudies.find(p => p.slug === hash);
+      if (project) {
+        // Defer state update and scroll to avoid synchronous setState in effect
+        const timeoutId = setTimeout(() => {
+          setExpandedId(project.id);
+          const element = document.getElementById(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 100);
+
+        return (): void => {
+          clearTimeout(timeoutId);
+        };
+      }
+    }
+  }, [location.hash]);
 
   const toggleExpand = useCallback((id: string): void => {
     setExpandedId(prev => (prev === id ? null : id));

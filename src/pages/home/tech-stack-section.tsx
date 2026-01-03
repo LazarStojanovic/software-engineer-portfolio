@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { Sparkles } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
 import { timing, easing, animationVariants } from './use-animation';
@@ -14,10 +15,14 @@ interface TechStackSectionProps {
   inView: boolean;
 }
 
+interface ExtendedTechCategory extends TechCategory {
+  isAI?: boolean;
+}
+
 const TechStackSection: React.FC<TechStackSectionProps> = ({ prefersReducedMotion, inView }) => {
   const { t } = useTranslation();
 
-  const techCategories: TechCategory[] = [
+  const techCategories: ExtendedTechCategory[] = [
     {
       name: t('techStack.frontend.title'),
       technologies: t('techStack.frontend.technologies').split(', '),
@@ -29,6 +34,11 @@ const TechStackSection: React.FC<TechStackSectionProps> = ({ prefersReducedMotio
     {
       name: t('techStack.tooling.title'),
       technologies: t('techStack.tooling.technologies').split(', '),
+    },
+    {
+      name: t('techStack.ai.title'),
+      technologies: t('techStack.ai.technologies').split(', '),
+      isAI: true,
     },
   ];
 
@@ -75,8 +85,11 @@ const TechStackSection: React.FC<TechStackSectionProps> = ({ prefersReducedMotio
       };
 
   return (
-    <section className='py-24 md:py-32 bg-background'>
-      <div className='container-max section-padding'>
+    <section className='py-24 md:py-32 bg-background relative overflow-hidden'>
+      {/* Background effects */}
+      <div className='absolute inset-0 bg-grid-pattern opacity-[0.02] dark:opacity-[0.03]' />
+
+      <div className='container-max section-padding relative z-10'>
         <motion.h2
           initial='hidden'
           animate={inView ? 'visible' : 'hidden'}
@@ -94,14 +107,14 @@ const TechStackSection: React.FC<TechStackSectionProps> = ({ prefersReducedMotio
           transition={{ duration: prefersReducedMotion ? 0 : timing.slow, delay: 0.1 }}
           className='text-center text-muted-foreground mb-12 md:mb-16 max-w-xl mx-auto'
         >
-          Technologies I use to build scalable, maintainable applications.
+          {t('techStack.subtitle')}
         </motion.p>
 
         <motion.div
           initial='hidden'
           animate={inView ? 'visible' : 'hidden'}
           variants={containerVariants}
-          className='grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto'
+          className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto'
         >
           {techCategories.map(category => (
             <motion.div
@@ -109,38 +122,67 @@ const TechStackSection: React.FC<TechStackSectionProps> = ({ prefersReducedMotio
               variants={categoryVariants}
               className='text-center group'
             >
-              <div className='bg-card border border-border rounded-2xl p-6 h-full hover:shadow-medium hover:border-primary/20 transition-all duration-300'>
-                <h3 className='text-lg font-display font-semibold mb-6 text-foreground group-hover:text-primary transition-colors'>
-                  {category.name}
-                </h3>
-                <motion.div
-                  variants={containerVariants}
-                  className='flex flex-wrap justify-center gap-2'
-                >
-                  {category.technologies.map(tech => (
-                    <motion.div
-                      key={tech}
-                      variants={badgeVariants}
-                      whileHover={
-                        prefersReducedMotion
-                          ? {}
-                          : {
-                              y: -2,
-                              scale: 1.05,
-                              transition: { duration: timing.fast },
-                            }
-                      }
-                      whileTap={prefersReducedMotion ? {} : { scale: 0.95 }}
+              <div
+                className={`bg-card border rounded-2xl p-6 h-full transition-all duration-300 ${
+                  category.isAI
+                    ? 'border-primary/30 hover:shadow-large hover:border-primary/50 relative overflow-hidden'
+                    : 'border-border hover:shadow-medium hover:border-primary/20'
+                }`}
+              >
+                {/* AI category special glow effect */}
+                {category.isAI && (
+                  <>
+                    <div className='absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent-500/5' />
+                    <div className='absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl' />
+                  </>
+                )}
+
+                <div className='relative z-10'>
+                  {/* Category header */}
+                  <div className='flex items-center justify-center gap-2 mb-6'>
+                    {category.isAI && <Sparkles className='w-5 h-5 text-primary' />}
+                    <h3
+                      className={`text-lg font-display font-semibold transition-colors ${
+                        category.isAI ? 'text-primary' : 'text-foreground group-hover:text-primary'
+                      }`}
                     >
-                      <Badge
-                        variant='outline'
-                        className='text-sm cursor-default hover:bg-primary/10 hover:border-primary/30 transition-colors'
+                      {category.name}
+                    </h3>
+                  </div>
+
+                  <motion.div
+                    variants={containerVariants}
+                    className='flex flex-wrap justify-center gap-2'
+                  >
+                    {category.technologies.map(tech => (
+                      <motion.div
+                        key={tech}
+                        variants={badgeVariants}
+                        whileHover={
+                          prefersReducedMotion
+                            ? {}
+                            : {
+                                y: -2,
+                                scale: 1.05,
+                                transition: { duration: timing.fast },
+                              }
+                        }
+                        whileTap={prefersReducedMotion ? {} : { scale: 0.95 }}
                       >
-                        {tech}
-                      </Badge>
-                    </motion.div>
-                  ))}
-                </motion.div>
+                        <Badge
+                          variant={category.isAI ? 'default' : 'outline'}
+                          className={`text-sm cursor-default transition-colors ${
+                            category.isAI
+                              ? 'bg-primary/20 text-primary border-primary/30 hover:bg-primary/30'
+                              : 'hover:bg-primary/10 hover:border-primary/30'
+                          }`}
+                        >
+                          {tech}
+                        </Badge>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </div>
               </div>
             </motion.div>
           ))}

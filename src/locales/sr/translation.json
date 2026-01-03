@@ -26,7 +26,10 @@
   "hero": {
     "name": "Lazar Stojanović",
     "role": "Softver Inženjer",
+    "status": "Otvoren za prilike",
+    "aiAugmented": "AI-Potpomognut Developer",
     "valueProp": "Gradim i vodim frontend timove koji isporučuju kvalitetne proizvode.",
+    "tagline": "Ne samo da kodiram—ko-pilotujem. Koristim AI za brži, bolji i pametniji razvoj.",
     "subtitle": "Specijalizovan za React, Angular i TypeScript. Strastven za mentorstvo i vođenje timova.",
     "credibility": "5+ godina · Trenutno u Symphony · Prethodno HTEC Group",
     "cta": {
@@ -34,6 +37,82 @@
       "secondary": "Kontaktiraj me"
     },
     "scroll": "Skroluj za više"
+  },
+  "impactMetrics": {
+    "title": "Karijera na jedan pogled",
+    "subtitle": "Gradim proizvode koji su bitni kroz više industrija.",
+    "years": "Godina iskustva",
+    "projects": "Isporučenih projekata",
+    "teamLed": "Vođen tim",
+    "industries": "Industrije",
+    "industryList": {
+      "healthcare": "Zdravstvo",
+      "fintech": "Fintech",
+      "telecom": "Telekom",
+      "government": "Javna uprava"
+    }
+  },
+  "aiFirst": {
+    "badge": "Šta me izdvaja",
+    "title": "AI-Potpomognut Razvoj",
+    "subtitle": "Prihvatam AI kao multiplikator snage. Koristeći alate kao što je Cursor, isporučujem brže bez žrtvovanja kvaliteta—trošeći više vremena na arhitekturu, UX i probleme koji zaista znače.",
+    "tagline": "Dok drugi još uvek kucaju, ja već iterujem.",
+    "steps": {
+      "ideate": {
+        "title": "Ideja",
+        "description": "Definiši problem i istraži rešenja uz AI-potpomognuto brainstorming"
+      },
+      "generate": {
+        "title": "Generisanje",
+        "description": "Brzo prototipiranje sa Cursor AI za kreiranje početnih implementacija"
+      },
+      "refine": {
+        "title": "Usavršavanje",
+        "description": "Pregled, testiranje i poliranje koda do produkcijskih standarda"
+      },
+      "ship": {
+        "title": "Isporuka",
+        "description": "Deploy sa poverenjem znajući da kvalitet nikada nije ugrožen"
+      }
+    },
+    "benefits": {
+      "velocity": {
+        "title": "2x Brzina",
+        "description": "Isporuči funkcionalnosti brže od tradicionalnog razvoja"
+      },
+      "quality": {
+        "title": "Viši kvalitet",
+        "description": "Više vremena za testiranje, edge case-ove i poliranje"
+      },
+      "focus": {
+        "title": "Strateški fokus",
+        "description": "Vreme za arhitekturu, ne za šablonski kod"
+      },
+      "creativity": {
+        "title": "Više kreativnosti",
+        "description": "Energija za UX, dizajn i oduševljenje korisnika"
+      }
+    }
+  },
+  "careerJourney": {
+    "title": "Put karijere",
+    "subtitle": "Od developera do Frontend Lead-a—progresija vođena radoznalošću i uticajem.",
+    "current": "Trenutno",
+    "cta": "Pogledaj punu istoriju",
+    "milestones": {
+      "developer": {
+        "title": "Softver Developer",
+        "description": "Počeo u HTEC Group, gradeći produkcijske aplikacije u React & Angular"
+      },
+      "lead": {
+        "title": "Frontend Lead",
+        "description": "Vodio tim od 8 osoba, mentorirao 5+ juniora, donosio tehničke odluke"
+      },
+      "aifirst": {
+        "title": "AI-First Era",
+        "description": "Pionir AI-potpomognutog razvoja u Symphony sa Cursor-om"
+      }
+    }
   },
   "intro": {
     "paragraph": "Specijalizujem se za kreiranje čistih, održivih arhitektura koje prioritizuju performanse i korisničko iskustvo. Moj pristup se fokusira na pisanje koda koji se skalira, dobro radi pod opterećenjem i ostaje lako razumljiv i modifikovan tokom vremena."
@@ -43,6 +122,7 @@
     "subtitle": "Izbor projekata koji prikazuju rešavanje problema i tehničko donošenje odluka.",
     "viewAll": "Pogledaj sve projekte",
     "featuredProject": "Istaknuti projekat",
+    "aiFirst": "AI-First",
     "backToHome": "Nazad na početnu",
     "projectCount": "{{count}} projekata iz oblasti zdravstva, telekomunikacija, javne uprave i fintech-a.",
     "confidentialityNotice": "Napomena o poverljivosti",
@@ -377,6 +457,7 @@
   },
   "techStack": {
     "title": "Tehnologije",
+    "subtitle": "Tehnologije koje koristim za izgradnju skalabilnih, održivih aplikacija.",
     "frontend": {
       "title": "Frontend",
       "technologies": "React, Angular, Next.js, TypeScript"
@@ -386,14 +467,63 @@
       "technologies": "Redux, RxJs, Jest, Grafana"
     },
     "tooling": {
-      "title": "Alati & Liderstvo",
-      "technologies": "Git, Mentorstvo, Intervjuisanje, Vođenje Tima"
+      "title": "Liderstvo",
+      "technologies": "Mentorstvo, Intervjuisanje, Vođenje Tima, Code Review"
+    },
+    "ai": {
+      "title": "AI & Moderni Workflow",
+      "technologies": "Cursor AI, GitHub Copilot, AI Pair Programming, Prompt Engineering"
     }
   },
   "experience": {
     "teaser": "5+ godina izgradnje produkcijskih web aplikacija",
     "description": "Od zdravstva do telekomunikacija, vodio sam timove i isporučivao proizvode koji su bitni.",
-    "link": "Pogledaj punu istoriju"
+    "link": "Pogledaj punu istoriju",
+    "backToHome": "Nazad na početnu",
+    "pageSubtitle": "Od developera do Frontend Lead-a — putovanje rasta, liderstva i isporuke značajnih proizvoda kroz više industrija.",
+    "referencesNotice": "Reference dostupne",
+    "referencesText": "Profesionalne reference od menadžera i kolega dostupne na zahtev.",
+    "current": "Trenutno",
+    "employmentType": {
+      "fullTime": "Puno radno vreme",
+      "contract": "Ugovor"
+    },
+    "stats": {
+      "title": "Pregled karijere",
+      "years": "Godina iskustva",
+      "companies": "Kompanija",
+      "projects": "Isporučenih projekata",
+      "teamLed": "Vođenih developera",
+      "mentored": "Mentoriranih developera",
+      "interviews": "Sprovedenih intervjua",
+      "industries": "Industrije"
+    },
+    "details": {
+      "highlights": "Ključni pokazatelji",
+      "overview": "Pregled",
+      "achievements": "Ključna dostignuća",
+      "technologies": "Korišćene tehnologije"
+    },
+    "cta": {
+      "headline": "Zainteresovani za saradnju?",
+      "subheadline": "Trenutno sam otvoren za nove prilike. Razgovarajmo o tome kako mogu doprineti vašem timu.",
+      "contact": "Kontaktirajte me",
+      "status": "Otvoren za prilike"
+    }
+  },
+  "contactCta": {
+    "status": "Otvoren za Prilike",
+    "headline": "Hajde da Napravimo Nešto Odlično Zajedno",
+    "subheadline": "Trenutno sam otvoren za nove prilike i voleo bih da razgovaram o tome kako mogu doprineti vašem timu.",
+    "primary": "Kontaktiraj me",
+    "preferredEmail": "Email preferiran",
+    "responseTime": "Obično odgovara u roku od 24h",
+    "openTo": "Otvoren za:",
+    "roles": {
+      "fullTime": "Puno radno vreme",
+      "contract": "Ugovor",
+      "remote": "Remote"
+    }
   },
   "contact": {
     "headline": "Hajde da napravimo nešto odlično.",

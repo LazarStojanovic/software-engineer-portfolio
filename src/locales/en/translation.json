@@ -26,7 +26,10 @@
   "hero": {
     "name": "Lazar Stojanović",
     "role": "Software Engineer",
+    "status": "Open to opportunities",
+    "aiAugmented": "AI-Augmented Developer",
     "valueProp": "I build and lead frontend teams that deliver high-quality products.",
+    "tagline": "I don't just code—I co-pilot. Leveraging AI to build faster, better, and smarter.",
     "subtitle": "Specializing in React, Angular, and TypeScript. Passionate about mentoring and team leadership.",
     "credibility": "5+ years · Currently at Symphony · Previously HTEC Group",
     "cta": {
@@ -34,6 +37,82 @@
       "secondary": "Let's talk"
     },
     "scroll": "Scroll to explore"
+  },
+  "impactMetrics": {
+    "title": "Career at a Glance",
+    "subtitle": "Building products that matter across multiple industries.",
+    "years": "Years Experience",
+    "projects": "Projects Delivered",
+    "teamLed": "Team Led",
+    "industries": "Industries",
+    "industryList": {
+      "healthcare": "Healthcare",
+      "fintech": "Fintech",
+      "telecom": "Telecom",
+      "government": "Government"
+    }
+  },
+  "aiFirst": {
+    "badge": "What Sets Me Apart",
+    "title": "AI-Augmented Development",
+    "subtitle": "I embrace AI as a force multiplier. Using tools like Cursor, I deliver faster without sacrificing quality—spending more time on architecture, UX, and the problems that truly matter.",
+    "tagline": "While others are still typing, I'm iterating.",
+    "steps": {
+      "ideate": {
+        "title": "Ideate",
+        "description": "Define the problem and explore solutions with AI-powered brainstorming"
+      },
+      "generate": {
+        "title": "Generate",
+        "description": "Rapidly prototype with Cursor AI to create initial implementations"
+      },
+      "refine": {
+        "title": "Refine",
+        "description": "Review, test, and polish the code to production standards"
+      },
+      "ship": {
+        "title": "Ship",
+        "description": "Deploy with confidence knowing quality was never compromised"
+      }
+    },
+    "benefits": {
+      "velocity": {
+        "title": "2x Velocity",
+        "description": "Ship features faster than traditional development"
+      },
+      "quality": {
+        "title": "Higher Quality",
+        "description": "More time for testing, edge cases, and polish"
+      },
+      "focus": {
+        "title": "Strategic Focus",
+        "description": "Spend time on architecture, not boilerplate"
+      },
+      "creativity": {
+        "title": "More Creativity",
+        "description": "Energy for UX, design, and user delight"
+      }
+    }
+  },
+  "careerJourney": {
+    "title": "Career Journey",
+    "subtitle": "From developer to Frontend Lead—a progression driven by curiosity and impact.",
+    "current": "Current",
+    "cta": "View full timeline",
+    "milestones": {
+      "developer": {
+        "title": "Software Developer",
+        "description": "Started at HTEC Group, building production apps in React & Angular"
+      },
+      "lead": {
+        "title": "Frontend Lead",
+        "description": "Led an 8-person team, mentored 5+ juniors, drove technical decisions"
+      },
+      "aifirst": {
+        "title": "AI-First Era",
+        "description": "Pioneering AI-augmented development at Symphony with Cursor"
+      }
+    }
   },
   "intro": {
     "paragraph": "I specialize in creating clean, maintainable architectures that prioritize performance and user experience. My approach focuses on writing code that scales, performs well under load, and remains easy to understand and modify over time."
@@ -43,6 +122,7 @@
     "subtitle": "A selection of projects showcasing problem-solving and technical decision-making.",
     "viewAll": "View all projects",
     "featuredProject": "Featured Project",
+    "aiFirst": "AI-First",
     "backToHome": "Back to Home",
     "projectCount": "{{count}} projects across healthcare, telecommunications, government, and fintech.",
     "confidentialityNotice": "Confidentiality Notice",
@@ -359,6 +439,7 @@
   },
   "techStack": {
     "title": "Tech Stack",
+    "subtitle": "Technologies I use to build scalable, maintainable applications.",
     "frontend": {
       "title": "Frontend",
       "technologies": "React, Angular, Next.js, TypeScript"
@@ -368,14 +449,63 @@
       "technologies": "Redux, RxJs, Jest, Grafana"
     },
     "tooling": {
-      "title": "Tooling & Leadership",
-      "technologies": "Git, Mentoring, Interviewing, Team Leading"
+      "title": "Leadership",
+      "technologies": "Mentoring, Interviewing, Team Leading, Code Review"
+    },
+    "ai": {
+      "title": "AI & Modern Workflow",
+      "technologies": "Cursor AI, GitHub Copilot, AI Pair Programming, Prompt Engineering"
     }
   },
   "experience": {
     "teaser": "5+ years building production web applications",
     "description": "From healthcare to telecommunications, I've led teams and shipped products that matter.",
-    "link": "View full timeline"
+    "link": "View full timeline",
+    "backToHome": "Back to Home",
+    "pageSubtitle": "From developer to Frontend Lead — a journey of growth, leadership, and delivering impactful products across multiple industries.",
+    "referencesNotice": "References Available",
+    "referencesText": "Professional references from managers and colleagues available upon request.",
+    "current": "Current",
+    "employmentType": {
+      "fullTime": "Full-time",
+      "contract": "Contract"
+    },
+    "stats": {
+      "title": "Career Highlights",
+      "years": "Years Experience",
+      "companies": "Companies",
+      "projects": "Projects Delivered",
+      "teamLed": "Developers Led",
+      "mentored": "Developers Mentored",
+      "interviews": "Interviews Conducted",
+      "industries": "Industries"
+    },
+    "details": {
+      "highlights": "Key Highlights",
+      "overview": "Overview",
+      "achievements": "Key Achievements",
+      "technologies": "Technologies Used"
+    },
+    "cta": {
+      "headline": "Interested in working together?",
+      "subheadline": "I'm currently open to new opportunities. Let's discuss how I can contribute to your team.",
+      "contact": "Get in Touch",
+      "status": "Open to opportunities"
+    }
+  },
+  "contactCta": {
+    "status": "Open to Opportunities",
+    "headline": "Let's Build Something Great Together",
+    "subheadline": "I'm currently open to new opportunities and would love to discuss how I can contribute to your team.",
+    "primary": "Get in Touch",
+    "preferredEmail": "Email preferred",
+    "responseTime": "Usually responds within 24h",
+    "openTo": "Open to:",
+    "roles": {
+      "fullTime": "Full-time",
+      "contract": "Contract",
+      "remote": "Remote"
+    }
   },
   "contact": {
     "headline": "Let's build something great.",

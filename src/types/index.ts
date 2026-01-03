@@ -142,6 +142,13 @@ export interface FeaturedProject {
   slug: string;
 }
 
+// Experience highlight metric
+export interface ExperienceHighlight {
+  metric: string;
+  value: string;
+  icon?: string;
+}
+
 // Experience timeline item
 export interface ExperienceItem {
   id: string;
@@ -152,4 +159,9 @@ export interface ExperienceItem {
   description: string;
   achievements: string[];
   technologies: string[];
+  employmentType: 'full-time' | 'contract';
+  highlights: ExperienceHighlight[];
+  keyProjects?: string[];
+  teamContext?: string;
+  isCurrent?: boolean;
 }
