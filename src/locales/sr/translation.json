@@ -40,24 +40,339 @@
   },
   "projects": {
     "title": "Istaknuti Radovi",
+    "subtitle": "Izbor projekata koji prikazuju rešavanje problema i tehničko donošenje odluka.",
     "viewAll": "Pogledaj sve projekte",
-    "project1": {
-      "name": "Finansijska Platforma",
-      "role": "Frontend Lead",
-      "problem": "Vodim frontend razvoj za platformu finansijskih usluga sa kompleksnim zahtevima podataka.",
-      "outcome": "Moderan stack · Kompletna dokumentacija"
+    "featuredProject": "Istaknuti projekat",
+    "backToHome": "Nazad na početnu",
+    "projectCount": "{{count}} projekata iz oblasti zdravstva, telekomunikacija, javne uprave i fintech-a.",
+    "confidentialityNotice": "Napomena o poverljivosti",
+    "confidentialityText": "Nazivi projekata i određeni detalji su izmenjeni zbog NDA ugovora. Svi opisani tehnički pristupi i rezultati su tačni.",
+    "legend": {
+      "fullTime": "Puno radno vreme",
+      "contract": "Ugovor (paralelno sa HTEC)"
     },
-    "project2": {
-      "name": "Telekomunikaciona Platforma",
-      "role": "Softver Inženjer",
-      "problem": "Izgradio i održavao veliku telekomunikacionu platformu sa micro-frontend arhitekturom.",
-      "outcome": "Enterprise skala · Grafana monitoring"
+    "timeline": {
+      "ongoing": "U toku",
+      "projectsCompleted_one": "{{count}} projekat završen",
+      "projectsCompleted_few": "{{count}} projekta završena",
+      "projectsCompleted_other": "{{count}} projekata završeno",
+      "projectsOngoing_one": "{{count}} projekat",
+      "projectsOngoing_few": "{{count}} projekta",
+      "projectsOngoing_other": "{{count}} projekata",
+      "careerStart": "Početak karijere",
+      "concurrent": "(paralelno)"
     },
-    "project3": {
-      "name": "Healthcare UI Biblioteka",
-      "role": "Feature Lead",
-      "problem": "Razvio kompletnu UI komponentnu biblioteku koristeći Radix za zdravstvene aplikacije.",
-      "outcome": "Industrijski standardi · Višekratne komponente"
+    "details": {
+      "context": "Kontekst",
+      "challenge": "Izazov",
+      "approach": "Pristup",
+      "outcomes": "Rezultati",
+      "keyDecisions": "Ključne odluke"
+    },
+    "caseStudies": {
+      "0": {
+        "title": "Enterprise AI Platforma za Obuku Modela u Bankarstvu",
+        "context": "Predvodim Symphony-jevu stratešku AI-first inicijativu za isporuku bankarskih rešenja nove generacije. Vodim razvoj na dva koloseka: sofisticiranu AI platformu za obuku modela za enterprise bankarske klijente i jedinstveni dizajn sistem na nivou kompanije.",
+        "problem": "Enterprise bankarski klijenti zahtevali su robusnu platformu sposobnu za orkestraciju kompleksnih ML tokova rada uz poštovanje strogih finansijskih regulatornih zahteva. Symphony je takođe identifikovao potrebu za centralizovanim dizajn sistemom kako bi se obezbedila konzistentnost brenda i ubrzala isporuka na svim proizvodnim linijama.",
+        "approach": [
+          "Arhitektuirao skalabilnu monorepo infrastrukturu omogućavajući ponovno korišćenje deljenog koda i nezavisne deployment pipeline-e",
+          "Pionirski uveo AI-potpomognut razvojni tok koristeći Cursor, značajno ubrzavajući brzinu isporuke",
+          "Jedini arhitekta i developer enterprise-grade UI komponentne biblioteke izgrađene na PrimeNG primitivima",
+          "Uspostavio sveobuhvatne obrasce dizajn sistema koji pokreću vizuelnu i funkcionalnu konzistentnost između projekata",
+          "Implementirao rigorozne standarde kvaliteta osiguravajući arhitekturalnu koherentnost kroz ekosistem komponenti"
+        ],
+        "technicalDecisions": [
+          {
+            "decision": "Najnoviji Angular sa standalone komponentama",
+            "rationale": "Moderni Angular pruža odličnu TypeScript integraciju, signale za reaktivnost i enterprise-grade alate"
+          },
+          {
+            "decision": "AI-first razvoj sa Cursor-om",
+            "rationale": "Cursor AI ubrzava brzinu razvoja uz održavanje kvaliteta koda kroz inteligentne predloge"
+          },
+          {
+            "decision": "PrimeNG-bazirana UI biblioteka",
+            "rationale": "PrimeNG nudi sveobuhvatne enterprise komponente koje se mogu prilagoditi Symphony-jevom dizajn sistemu"
+          },
+          {
+            "decision": "Monorepo arhitektura",
+            "rationale": "Omogućava deljeni kod između AI platforme i UI biblioteke uz održavanje nezavisnih deployment pipeline-a"
+          }
+        ],
+        "outcomes": [
+          {
+            "metric": "Obim",
+            "value": "2 Projekta",
+            "description": "AI Platforma + UI Biblioteka"
+          },
+          { "metric": "UI Biblioteka", "value": "Solo Lead", "description": "Jedini developer" },
+          { "metric": "Pristup", "value": "AI-First", "description": "Cursor-powered razvoj" },
+          {
+            "metric": "Uticaj",
+            "value": "Cela kompanija",
+            "description": "Biblioteka korišćena na više projekata"
+          }
+        ]
+      },
+      "1": {
+        "title": "Enterprise Platforma za Finansijske Usluge i Usklađenost",
+        "context": "Vodio frontend razvoj za kritičnu platformu finansijskih usluga koja opslužuje enterprise klijente sa kompleksnim zahtevima za vizualizaciju podataka i regulatornu usklađenost.",
+        "problem": "Finansijske institucije zahtevale su platformu visokih performansi sposobnu za obradu i vizualizaciju kompleksnih finansijskih skupova podataka uz obezbeđivanje stroge regulatorne usklađenosti i mogućnosti revizorskog traga.",
+        "approach": [
+          "Arhitektuirao robusnu Next.js osnovu sa TypeScript-om osiguravajući end-to-end type safety",
+          "Razvio sveobuhvatnu testnu infrastrukturu postižući visoku pokrivenost kritične poslovne logike",
+          "Autor opsežne tehničke dokumentacije omogućavajući besprekorno onboardovanje tima i dugoročnu održivost",
+          "Dizajnirao tokove rada za demo prezentacije olakšavajući efikasne cikluse povratnih informacija i usklađivanje sa klijentom"
+        ],
+        "technicalDecisions": [
+          {
+            "decision": "Next.js kao framework",
+            "rationale": "Mogućnosti server-side renderinga, odlična TypeScript podrška i ugrađene optimizacije"
+          },
+          {
+            "decision": "Sveobuhvatno Jest testiranje",
+            "rationale": "Finansijske aplikacije zahtevaju visoku pouzdanost i ekstenzivnu testnu pokrivenost"
+          }
+        ],
+        "outcomes": [
+          { "metric": "Uloga", "value": "Lead", "description": "Frontend Lead pozicija" },
+          { "metric": "Stack", "value": "Moderan", "description": "Next.js + TypeScript" },
+          {
+            "metric": "Dokumentacija",
+            "value": "Kompletna",
+            "description": "Sveobuhvatna dokumentacija"
+          }
+        ]
+      },
+      "2": {
+        "title": "Enterprise Telekomunikaciona Infrastrukturna Platforma",
+        "context": "Doprineo velikoj telekomunikacionoj platformi za Fortune 500 industrijskog lidera, omogućavajući milionima korisnika da upravljaju svojim uslugama i nalozima.",
+        "problem": "Platforma je zahtevala horizontalno skaliranje preko distribuiranih razvojnih timova uz održavanje UX konzistentnosti. Nasleđena uska grla performansi zahtevala su strateški refaktoring, a enterprise-grade observability bio je neophodan za 24/7 operacije.",
+        "approach": [
+          "Implementirao micro-frontend arhitekturu koristeći Piral, omogućavajući autonoman timski razvoj i deployment",
+          "Izvršio strateške inicijative refaktoringa performansi smanjujući vreme učitavanja i poboljšavajući korisničko iskustvo",
+          "Integrisao sveobuhvatan Grafana observability stack za real-time monitoring i reagovanje na incidente",
+          "Autor međutimske tehničke dokumentacije standardizujući razvojne prakse i API ugovore"
+        ],
+        "technicalDecisions": [
+          {
+            "decision": "Piral micro-frontend arhitektura",
+            "rationale": "Omogućila višestrukim timovima da rade nezavisno uz održavanje jedinstvenog UX-a"
+          },
+          {
+            "decision": "Grafana integracija",
+            "rationale": "Enterprise klijenti zahtevaju duboku observability za operacije"
+          }
+        ],
+        "outcomes": [
+          { "metric": "Skala", "value": "Enterprise", "description": "Veliki telekom klijent" },
+          { "metric": "Arhitektura", "value": "Micro-FE", "description": "Zasnovano na Piral-u" },
+          { "metric": "Monitoring", "value": "Grafana", "description": "Potpuna observability" }
+        ]
+      },
+      "3": {
+        "title": "Arhitektura Healthcare Platforme i Strateško Planiranje",
+        "context": "Angažovan kao tehnički lead za pred-razvojnu fazu kritične healthcare inicijative, odgovoran za prevođenje poslovnih zahteva u konkretne tehničke specifikacije.",
+        "problem": "Healthcare klijenti zahtevali su sveobuhvatno tehničko mapiranje puta sa preciznom procenom napora, regulatorno usklađen dizajn arhitekture i budžetski usklađene prekretnice isporuke pre nego što se obavežu na razvojnu investiciju.",
+        "approach": [
+          "Facilitirao međufunkcionalne radionice procene usklađujući tehničke i poslovne zainteresovane strane",
+          "Autor detaljnih struktura raščlanjivanja posla omogućavajući precizno planiranje resursa i prognoziranje sprintova",
+          "Dizajnirao modularnu frontend arhitekturu optimizovanu za faznu isporuku i regulatornu usklađenost",
+          "Orkestrirao sesije prioritizacije funkcionalnosti balansirajući kliničku vrednost naspram budžetskih ograničenja"
+        ],
+        "technicalDecisions": [
+          {
+            "decision": "Komponentno-bazirana arhitektura",
+            "rationale": "Omogućila fazni razvoj usklađen sa budžetskim izdanjima"
+          },
+          {
+            "decision": "Detaljna dokumentacija radnih paketa",
+            "rationale": "Healthcare projekti zahtevaju sledljivost i jasnu definiciju obima"
+          }
+        ],
+        "outcomes": [
+          { "metric": "Planiranje", "value": "Kompletno", "description": "Pun obim projekta" },
+          { "metric": "Arhitektura", "value": "Dizajnirana", "description": "Frontend struktura" },
+          { "metric": "Budžet", "value": "Usklađen", "description": "Zahtevi klijenta" }
+        ]
+      },
+      "4": {
+        "title": "Jedinstvena Enterprise Operativna Platforma",
+        "context": "Razvio centralizovanu operativnu platformu za konsolidaciju i unapređenje osnovnih poslovnih procesa HTEC Grupe, opslužujući 1000+ zaposlenih kroz više odeljenja.",
+        "problem": "Kritični poslovni procesi uključujući akviziciju talenata, finansijske operacije i upravljanje performansama bili su fragmentirani preko disparatnih nasleđenih sistema, uzrokujući neefikasnosti i silose podataka.",
+        "approach": [
+          "Razvio jedinstvenu arhitekturu platforme konsolidujući HR, Finansije i tokove rada Upravljanja Performansama",
+          "Razvio inteligentni pipeline za akviziciju talenata sa automatizovanim screening-om i mogućnostima zakazivanja",
+          "Izgradio sveobuhvatne dashboarde za finansijsko praćenje i izveštavanje omogućavajući real-time vidljivost budžeta",
+          "Implementirao 360-stepeni sistem evaluacije zaposlenih sa prilagodljivim ciklusima pregleda i analitikom"
+        ],
+        "technicalDecisions": [
+          {
+            "decision": "React + TypeScript stack",
+            "rationale": "Konzistentno sa ekspertizom kompanije za brz razvoj"
+          },
+          {
+            "decision": "Modularna arhitektura",
+            "rationale": "Različita odeljenja imala su različite potrebe zahtevajući nezavisne module"
+          }
+        ],
+        "outcomes": [
+          {
+            "metric": "Procesi",
+            "value": "Ujedinjeni",
+            "description": "HR, Finansije, Evaluacije"
+          },
+          { "metric": "Pokrivenost", "value": "Visoka", "description": "Jest testiranje" },
+          { "metric": "Korisnici", "value": "Kompanija", "description": "Interni alat" }
+        ]
+      },
+      "5": {
+        "title": "Modernizacija Pristupačnosti Vladine Digitalne Identifikacije",
+        "context": "Vodio transformaciju pristupačnosti kritičnog vladinog sistema digitalne identifikacije, osiguravajući jednak pristup za sve građane uključujući osobe sa invaliditetom.",
+        "problem": "Nacionalna identifikaciona platforma nije ispunjavala obavezne WCAG 2.1 AA standarde pristupačnosti, rizikujući pravnu neusklađenost i isključujući građane sa invaliditetom iz esencijalnih vladinih usluga.",
+        "approach": [
+          "Sproveo sveobuhvatnu reviziju pristupačnosti identifikujući 100+ propusta usklađenosti kroz aplikaciju",
+          "Sistematski sanirao komponente za postizanje pune WCAG 2.1 AA sertifikacije",
+          "Razvio kompletan sistem navigacije tastaturom osiguravajući nultu zavisnost od miša za sve korisničke tokove",
+          "Upravljao procesom sertifikacije pristupačnosti treće strane, postižući odobrenje iz prvog pokušaja"
+        ],
+        "technicalDecisions": [
+          {
+            "decision": "Pristup progresivnog unapređenja",
+            "rationale": "Inkrementalno nadograđivanje održavalo funkcionalnost dok se poboljšavala pristupačnost"
+          }
+        ],
+        "outcomes": [
+          {
+            "metric": "Sertifikacija",
+            "value": "Položena",
+            "description": "Sertifikovana od treće strane"
+          },
+          { "metric": "Standard", "value": "WCAG 2.1", "description": "AA usklađenost" },
+          { "metric": "Vremenska linija", "value": "3 meseca", "description": "Po planu" }
+        ]
+      },
+      "6": {
+        "title": "Enterprise Healthcare Dizajn Sistem i Komponentna Biblioteka",
+        "context": "Arhitektuirao i vodio razvoj sveobuhvatnog dizajn sistema za healthcare aplikacije, uspostavljajući temelj za konzistentne, pristupačne i usklađene medicinske softverske interfejse.",
+        "problem": "Healthcare softver zahteva najviše standarde pristupačnosti i regulatorne usklađenosti. Organizaciji je nedostajala jedinstvena komponentna biblioteka, što je rezultiralo nekonzistentnim UX-om i dupliranim naporima pristupačnosti kroz projekte.",
+        "approach": [
+          "Arhitektuirao produkciono spremnu UI komponentnu biblioteku koristeći Radix primitive za garantovanu pristupačnost",
+          "Razvio komponente koje ispunjavaju FDA i HIPAA-usklađene healthcare zahteve pristupačnosti",
+          "Vodio razvoj funkcionalnosti osiguravajući usklađenost sa regulatornim standardima medicinske industrije",
+          "Uspostavio obrasce dizajna za višekratnu upotrebu usvojene kroz više healthcare proizvodnih linija"
+        ],
+        "technicalDecisions": [
+          {
+            "decision": "Radix UI kao osnova",
+            "rationale": "Nestilizirani, pristupačni primitivi koji osiguravaju WCAG usklađenost"
+          },
+          {
+            "decision": "React + TypeScript",
+            "rationale": "Type safety kritičan za healthcare gde greške imaju ozbiljne posledice"
+          }
+        ],
+        "outcomes": [
+          { "metric": "Biblioteka", "value": "Kompletna", "description": "Pun UI sistem" },
+          { "metric": "Standardi", "value": "Healthcare", "description": "Industrijki usklađeno" },
+          {
+            "metric": "Višekratnost",
+            "value": "Visoka",
+            "description": "Korišćenje na više projekata"
+          }
+        ]
+      },
+      "7": {
+        "title": "Enterprise Platforma za Upravljanje Resursima",
+        "context": "Služio kao Frontend Lead za veliku enterprise platformu tokom dvogodišnjeg angažmana, gradeći i mentorišući visoko-performantni razvojni tim dok sam vodio tehničku izvrsnost.",
+        "problem": "Platforma je zahtevala iskusno tehničko liderstvo za skaliranje frontend tima, modernizaciju nasleđenog AngularJS codebase-a i uspostavljanje održivih razvojnih praksi za dugoročnu evoluciju proizvoda.",
+        "approach": [
+          "Izgradio i vodio međufunkcionalni frontend tim od 8 developera, vodeći isporuku sprintova i tehničke odluke",
+          "Uspostavio strukturirani mentorski program ubrzavajući karijerski rast za 5+ junior developera i stažista",
+          "Orkestrirao stratešku migraciju sa AngularJS na moderni Angular, poboljšavajući performanse i održivost",
+          "Autor sveobuhvatne tehničke dokumentacije uspostavljajući timsku bazu znanja i izvrsnost onboardinga",
+          "Dizajnirao unapređeni proces onboardinga smanjujući vreme prilagođavanja novih developera za 40%"
+        ],
+        "technicalDecisions": [
+          {
+            "decision": "Angular 2+ migracija sa AngularJS",
+            "rationale": "Moderne mogućnosti framework-a i bolja održivost"
+          },
+          {
+            "decision": "RxJs za reaktivne obrasce",
+            "rationale": "Kompleksni asinhroni tokovi podataka zahtevali pristup reaktivnog programiranja"
+          }
+        ],
+        "outcomes": [
+          { "metric": "Tim", "value": "8 developera", "description": "Vodio frontend tim" },
+          { "metric": "Trajanje", "value": "2 godine", "description": "Dugoročni projekat" },
+          { "metric": "Mentorstvo", "value": "5+ juniora", "description": "Karijerski razvoj" }
+        ]
+      },
+      "8": {
+        "title": "Healthcare Administracioni i Analitički Dashboard",
+        "context": "Razvio sveobuhvatnu healthcare administrativnu platformu omogućavajući medicinskom osoblju da upravlja podacima pacijenata, generiše izveštaje o usklađenosti i prati zdravlje sistema u realnom vremenu.",
+        "problem": "Healthcare administratorima nedostajao je centralizovani dashboard za upravljanje pacijentima, regulatorno izveštavanje i operativnu analitiku, što je vodilo ručnim procesima i odloženom donošenju odluka.",
+        "approach": [
+          "Arhitektuirao i pokrenuo celokupnu frontend aplikaciju od inicijalnog scaffolding-a projekta do produkcijskog deployment-a",
+          "Razvio intuitivan admin interfejs sa kontrolom pristupa zasnovanom na ulogama i mogućnostima revizorskog logovanja",
+          "Integrisao Jasper Reports engine omogućavajući automatizovano generisanje regulatorno-usklađene healthcare dokumentacije",
+          "Implementirao Grafana observability dashboarde pružajući real-time operativne metrike i alerte"
+        ],
+        "technicalDecisions": [
+          {
+            "decision": "Jasper Reports integracija",
+            "rationale": "Healthcare industrijski standard za generisanje usklađenih izveštaja"
+          }
+        ],
+        "outcomes": [
+          { "metric": "Izveštaji", "value": "Jasper", "description": "Healthcare usklađeni" },
+          { "metric": "Monitoring", "value": "Grafana", "description": "Dashboardi" },
+          { "metric": "Setup", "value": "Kompletan", "description": "Od nule" }
+        ]
+      },
+      "9": {
+        "title": "Enterprise Cloud Storage i Platforma za Upravljanje Fajlovima",
+        "context": "Unapređivao cloud-baziranu platformu za skladištenje fajlova i saradnju omogućavajući enterprise timovima da bezbedno skladište, dele i upravljaju dokumentima na skali.",
+        "problem": "Platforma se suočavala sa izazovima korisničkog iskustva i tehničkim dugom koji su ometali usvajanje. Strateška unapređenja funkcionalnosti i poboljšanja arhitekture bila su potrebna da se zadovolje rastući enterprise zahtevi.",
+        "approach": [
+          "Isporučio strateška unapređenja funkcionalnosti poboljšavajući tokove rada upravljanja fajlovima i mogućnosti saradnje",
+          "Izvršio sistematsko smanjenje tehničkog duga kroz ciljani refaktoring i optimizaciju koda",
+          "Modernizovao korisnički interfejs implementirajući savremene obrasce dizajna i poboljšanu pristupačnost"
+        ],
+        "technicalDecisions": [
+          {
+            "decision": "Redux za state management",
+            "rationale": "Kompleksne operacije sa fajlovima zahtevale predvidivo rukovanje stanjem"
+          }
+        ],
+        "outcomes": [
+          { "metric": "Funkcionalnosti", "value": "Unapređene", "description": "Nove i postojeće" },
+          { "metric": "Kvalitet", "value": "Poboljšan", "description": "Ispravke grešaka" },
+          { "metric": "Dizajn", "value": "Ažuriran", "description": "UI poboljšanja" }
+        ]
+      },
+      "10": {
+        "title": "Nacionalni Healthcare Informacioni Sistem",
+        "context": "Održavao i unapređivao vladin healthcare informacioni sistem koji opslužuje medicinske institucije širom zemlje, osiguravajući kontinuiranu dostupnost kritičnih usluga za pacijente.",
+        "problem": "Kritična AngularJS platforma zahtevala je ekspertsko održavanje da se osigura 24/7 dostupnost dok se pažljivo uvode nove funkcionalnosti bez ometanja esencijalnih healthcare operacija.",
+        "approach": [
+          "Pružio ekspertsko održavanje osiguravajući 99.9% uptime za kritičnu healthcare infrastrukturu",
+          "Dijagnostikovao i rešio kompleksne probleme nasleđenog codebase-a minimizirajući prekide usluge",
+          "Isporučio inkrementalna unapređenja funkcionalnosti poboljšavajući efikasnost kliničkih tokova rada"
+        ],
+        "technicalDecisions": [
+          {
+            "decision": "Održavanje AngularJS stack-a",
+            "rationale": "Zahtevi stabilnosti vladinog sistema sprečili veće prepravke"
+          }
+        ],
+        "outcomes": [
+          { "metric": "Stabilnost", "value": "Održana", "description": "Produkcioni sistem" },
+          { "metric": "Funkcionalnosti", "value": "Nove", "description": "Dodata funkcionalnost" },
+          { "metric": "Greške", "value": "Rešene", "description": "Nasleđene ispravke" }
+        ]
+      }
     }
   },
   "techStack": {

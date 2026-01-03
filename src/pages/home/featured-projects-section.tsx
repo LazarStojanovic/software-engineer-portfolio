@@ -25,6 +25,16 @@ const FeaturedProjectsSection: React.FC<FeaturedProjectsSectionProps> = ({
 }) => {
   const { t } = useTranslation();
 
+  // Get translated project content
+  const getTranslatedTitle = (projectId: string): string =>
+    t(`projects.caseStudies.${projectId}.title`);
+
+  const getTranslatedProblem = (projectId: string): string => {
+    const problem = t(`projects.caseStudies.${projectId}.problem`);
+    // Return first sentence for preview
+    return problem.split('.')[0] + '.';
+  };
+
   return (
     <section className='py-24 md:py-32 bg-muted/30'>
       <div className='container-max section-padding'>
@@ -37,9 +47,7 @@ const FeaturedProjectsSection: React.FC<FeaturedProjectsSectionProps> = ({
         >
           <div>
             <h2 className='section-title text-foreground'>{t('projects.title')}</h2>
-            <p className='text-muted-foreground mt-2 max-w-xl'>
-              A selection of projects showcasing problem-solving and technical decision-making.
-            </p>
+            <p className='text-muted-foreground mt-2 max-w-xl'>{t('projects.subtitle')}</p>
           </div>
           <Button asChild variant='ghost' className='self-start md:self-auto'>
             <Link to='/projects'>
@@ -65,7 +73,9 @@ const FeaturedProjectsSection: React.FC<FeaturedProjectsSectionProps> = ({
                   <div className='absolute inset-0 bg-grid-pattern opacity-10' />
                   <div className='relative text-center p-8'>
                     <div className='text-6xl font-display font-bold text-primary/30 mb-2'>01</div>
-                    <div className='text-sm text-muted-foreground'>Featured Project</div>
+                    <div className='text-sm text-muted-foreground'>
+                      {t('projects.featuredProject')}
+                    </div>
                   </div>
                 </div>
 
@@ -77,11 +87,11 @@ const FeaturedProjectsSection: React.FC<FeaturedProjectsSectionProps> = ({
                   </div>
 
                   <CardTitle className='text-2xl md:text-3xl mb-3 group-hover:text-primary transition-colors'>
-                    {featuredProjects[0].title}
+                    {getTranslatedTitle(featuredProjects[0].id)}
                   </CardTitle>
 
                   <p className='text-muted-foreground mb-4 line-clamp-2'>
-                    {featuredProjects[0].problem}
+                    {getTranslatedProblem(featuredProjects[0].id)}
                   </p>
 
                   {/* Outcome metrics */}
@@ -123,11 +133,13 @@ const FeaturedProjectsSection: React.FC<FeaturedProjectsSectionProps> = ({
                       </Badge>
                     </div>
                     <CardTitle className='text-xl group-hover:text-primary transition-colors'>
-                      {project.title}
+                      {getTranslatedTitle(project.id)}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className='space-y-4'>
-                    <p className='text-muted-foreground text-sm line-clamp-2'>{project.problem}</p>
+                    <p className='text-muted-foreground text-sm line-clamp-2'>
+                      {getTranslatedProblem(project.id)}
+                    </p>
 
                     <div className='text-sm font-medium text-primary'>{project.outcome}</div>
 

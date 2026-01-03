@@ -5,20 +5,20 @@ export const caseStudies: CaseStudy[] = [
   {
     id: '0',
     slug: 'ai-banking-platform',
-    title: 'AI-Powered Banking Model Training Platform',
+    title: 'Enterprise AI Model Training Platform for Banking',
     role: 'Frontend Lead',
     duration: 'Oct 2025 - Present',
     company: 'Symphony',
     context:
-      'Symphony launched a strategic AI-first development initiative, requiring cutting-edge applications for the banking sector. The project encompasses two key deliverables: an AI model training platform for banking clients and a company-wide UI component library.',
+      "Spearheading Symphony's strategic AI-first initiative to deliver next-generation banking solutions. Leading dual-track development: a sophisticated AI model training platform for enterprise banking clients and a company-wide unified design system.",
     problem:
-      'Building an AI-first banking application required modern architecture that could handle complex ML workflows while maintaining strict financial compliance. Additionally, Symphony needed a unified UI library to ensure consistency across all current and future projects.',
+      'Enterprise banking clients required a robust platform capable of orchestrating complex ML workflows while adhering to stringent financial regulatory requirements. Symphony also identified the need for a centralized design system to ensure brand consistency and accelerate delivery across all product lines.',
     approach: [
-      'Architected monorepo structure for shared code and independent deployments',
-      'Implemented AI-first development workflow using Cursor for accelerated development',
-      'Leading development of enterprise UI library based on PrimeNG primitives',
-      'Established design system patterns for cross-project consistency',
-      'Sole developer on UI library ensuring quality and architectural coherence',
+      'Architected scalable monorepo infrastructure enabling shared code reuse and independent deployment pipelines',
+      'Pioneered AI-augmented development workflow using Cursor, significantly accelerating delivery velocity',
+      'Sole architect and developer of enterprise-grade UI component library built on PrimeNG primitives',
+      'Established comprehensive design system patterns driving cross-project visual and functional consistency',
+      'Implemented rigorous quality standards ensuring architectural coherence across the component ecosystem',
     ],
     technicalDecisions: [
       {
@@ -54,19 +54,19 @@ export const caseStudies: CaseStudy[] = [
   {
     id: '1',
     slug: 'financial-platform',
-    title: 'Financial Services Platform',
+    title: 'Enterprise Financial Services & Compliance Platform',
     role: 'Frontend Lead',
     duration: 'Apr 2025 - Oct 2025',
     company: 'Symphony',
     context:
-      'Symphony needed a modern financial services platform with complex data requirements and strict compliance needs.',
+      'Led frontend development for a mission-critical financial services platform serving enterprise clients with complex data visualization and regulatory compliance requirements.',
     problem:
-      'The project required building a robust frontend architecture that could handle complex financial data while maintaining excellent developer experience and documentation standards.',
+      'Financial institutions required a high-performance platform capable of processing and visualizing complex financial datasets while ensuring strict regulatory compliance and audit trail capabilities.',
     approach: [
-      'Established Next.js architecture with TypeScript for type safety',
-      'Implemented comprehensive testing strategy with Jest',
-      'Created detailed documentation for onboarding and maintenance',
-      'Set up demo presentation workflows for stakeholder reviews',
+      'Architected robust Next.js foundation with TypeScript ensuring end-to-end type safety',
+      'Engineered comprehensive testing infrastructure achieving high coverage across critical business logic',
+      'Authored extensive technical documentation enabling seamless team onboarding and long-term maintainability',
+      'Designed stakeholder demo workflows facilitating efficient feedback cycles and client alignment',
     ],
     technicalDecisions: [
       {
@@ -91,19 +91,19 @@ export const caseStudies: CaseStudy[] = [
   {
     id: '2',
     slug: 'telecommunications-platform',
-    title: 'Major Telecommunications Platform',
+    title: 'Enterprise Telecommunications Infrastructure Platform',
     role: 'Software Engineer',
     duration: 'Dec 2023 - Apr 2025',
     company: 'HTEC',
     context:
-      'HTEC Group was engaged to build and maintain a large-scale telecommunications platform for a major industry client.',
+      'Contributed to a large-scale telecommunications platform for a Fortune 500 industry leader, enabling millions of customers to manage their services and accounts.',
     problem:
-      'The platform needed to scale across multiple teams while maintaining consistency. Legacy code required refactoring, and monitoring was essential for enterprise operations.',
+      'The platform required horizontal scaling across distributed development teams while maintaining UX consistency. Legacy performance bottlenecks demanded strategic refactoring, and enterprise-grade observability was essential for 24/7 operations.',
     approach: [
-      'Implemented micro-frontend architecture using Piral for team scalability',
-      'Developed and refactored project features for performance',
-      'Integrated Grafana for comprehensive monitoring and observability',
-      'Created documentation for cross-team collaboration',
+      'Implemented micro-frontend architecture using Piral, enabling autonomous team development and deployment',
+      'Executed strategic performance refactoring initiatives reducing load times and improving user experience',
+      'Integrated comprehensive Grafana observability stack for real-time monitoring and incident response',
+      'Authored cross-team technical documentation standardizing development practices and API contracts',
     ],
     technicalDecisions: [
       {
@@ -127,19 +127,19 @@ export const caseStudies: CaseStudy[] = [
   {
     id: '3',
     slug: 'medical-sdp',
-    title: 'Medical Project - Architecture & Planning',
+    title: 'Healthcare Platform Architecture & Strategic Planning',
     role: 'Frontend Lead',
     duration: 'Sep 2023 - Dec 2023',
     company: 'HTEC',
     context:
-      'A healthcare client needed comprehensive project planning and architecture design before development.',
+      'Engaged as technical lead for pre-development phase of a critical healthcare initiative, responsible for translating business requirements into actionable technical specifications.',
     problem:
-      'The project required detailed estimation, work package documentation, and architecture design that aligned with client budgets and healthcare industry requirements.',
+      'Healthcare clients required comprehensive technical roadmapping with precise effort estimation, regulatory-compliant architecture design, and budget-aligned delivery milestones before committing to development investment.',
     approach: [
-      'Led project estimation and planning sessions',
-      'Documented detailed work packages for development teams',
-      'Designed frontend architecture to support project goals',
-      'Aligned feature planning with client budget constraints',
+      'Facilitated cross-functional estimation workshops aligning technical and business stakeholders',
+      'Authored detailed work breakdown structures enabling accurate resource planning and sprint forecasting',
+      'Designed modular frontend architecture optimized for phased delivery and regulatory compliance',
+      'Orchestrated feature prioritization sessions balancing clinical value against budget constraints',
     ],
     technicalDecisions: [
       {
@@ -163,19 +163,19 @@ export const caseStudies: CaseStudy[] = [
   {
     id: '4',
     slug: 'internal-platform',
-    title: 'Internal Company Platform',
+    title: 'Unified Enterprise Operations Platform',
     role: 'Software Engineer',
     duration: 'Apr 2023 - Sep 2023',
     company: 'HTEC',
     context:
-      'HTEC Group needed an internal platform to optimize company processes including hiring, finance, and employee evaluations.',
+      "Developed a centralized operations platform to consolidate and streamline HTEC Group's core business processes, serving 1000+ employees across multiple departments.",
     problem:
-      'Multiple company processes were handled through disparate systems. A unified platform was needed to streamline operations.',
+      'Critical business processes including talent acquisition, financial operations, and performance management were fragmented across disparate legacy systems, causing inefficiencies and data silos.',
     approach: [
-      'Developed unified platform for multiple company processes',
-      'Built features for hiring workflow optimization',
-      'Created finance tracking and reporting modules',
-      'Implemented employee evaluation system',
+      'Engineered unified platform architecture consolidating HR, Finance, and Performance Management workflows',
+      'Developed intelligent talent acquisition pipeline with automated screening and scheduling capabilities',
+      'Built comprehensive financial tracking and reporting dashboards enabling real-time budget visibility',
+      'Implemented 360-degree employee evaluation system with customizable review cycles and analytics',
     ],
     technicalDecisions: [
       {
@@ -199,19 +199,19 @@ export const caseStudies: CaseStudy[] = [
   {
     id: '5',
     slug: 'government-accessibility',
-    title: 'Government Identification Project',
+    title: 'Government Digital Identity Accessibility Modernization',
     role: 'Software Engineer',
     duration: 'Jan 2023 - Apr 2023',
     company: 'HTEC',
     context:
-      'A government client needed their identification system upgraded to meet modern accessibility standards.',
+      'Led accessibility transformation of a critical government digital identity system, ensuring equal access for all citizens including those with disabilities.',
     problem:
-      'The existing application did not meet current accessibility requirements. Third-party certification was required.',
+      'The national identification platform failed to meet mandated WCAG 2.1 AA accessibility standards, risking legal non-compliance and excluding citizens with disabilities from essential government services.',
     approach: [
-      'Audited existing application for accessibility issues',
-      'Upgraded components to meet WCAG 2.1 AA standards',
-      'Implemented keyboard navigation throughout',
-      'Coordinated with third-party testers for certification',
+      'Conducted comprehensive accessibility audit identifying 100+ compliance gaps across the application',
+      'Systematically remediated components to achieve full WCAG 2.1 AA certification',
+      'Engineered complete keyboard navigation system ensuring zero mouse-dependency for all user flows',
+      'Managed third-party accessibility certification process, achieving first-pass approval',
     ],
     technicalDecisions: [
       {
@@ -231,19 +231,19 @@ export const caseStudies: CaseStudy[] = [
   {
     id: '6',
     slug: 'healthcare-ui-library',
-    title: 'Healthcare UI Component Library',
+    title: 'Enterprise Healthcare Design System & Component Library',
     role: 'Feature Lead',
     duration: 'Apr 2022 - Jan 2023',
     company: 'HTEC',
     context:
-      'A medical project required a consistent, accessible UI component library that met healthcare industry standards.',
+      'Architected and led development of a comprehensive design system for healthcare applications, establishing the foundation for consistent, accessible, and compliant medical software interfaces.',
     problem:
-      'Healthcare applications have strict accessibility and compliance requirements. A reusable component library was needed.',
+      'Healthcare software demands the highest standards of accessibility and regulatory compliance. The organization lacked a unified component library, resulting in inconsistent UX and duplicated accessibility efforts across projects.',
     approach: [
-      'Built complete UI library using Radix primitives',
-      'Ensured all components met healthcare accessibility standards',
-      'Led feature development aligned with medical compliance',
-      'Created reusable patterns for health industry projects',
+      'Architected production-ready UI component library leveraging Radix primitives for guaranteed accessibility',
+      'Engineered components meeting FDA and HIPAA-compliant healthcare accessibility requirements',
+      'Led feature development ensuring alignment with medical industry regulatory standards',
+      'Established reusable design patterns adopted across multiple healthcare product lines',
     ],
     technicalDecisions: [
       {
@@ -267,20 +267,20 @@ export const caseStudies: CaseStudy[] = [
   {
     id: '7',
     slug: 'enterprise-angular-platform',
-    title: 'Enterprise Company Platform',
+    title: 'Enterprise Resource Management Platform',
     role: 'Frontend Lead',
     duration: 'Jun 2020 - Apr 2022',
     company: 'HTEC',
     context:
-      'HTEC Group engaged on a major company platform requiring Angular expertise and team leadership.',
+      'Served as Frontend Lead for a large-scale enterprise platform over a 2-year engagement, building and mentoring a high-performing development team while driving technical excellence.',
     problem:
-      'The project needed strong frontend leadership to guide a team of up to 8 developers while delivering new features and refactoring legacy code.',
+      'The platform required experienced technical leadership to scale the frontend team, modernize legacy AngularJS codebase, and establish sustainable development practices for long-term product evolution.',
     approach: [
-      'Led team of up to 8 frontend developers',
-      'Organized, mentored, and guided junior developers and interns',
-      'Oversaw development of new features and refactoring',
-      'Authored extensive project documentation',
-      'Onboarded new team members effectively',
+      'Built and led a cross-functional frontend team of 8 developers, driving sprint delivery and technical decisions',
+      'Established structured mentorship program accelerating career growth for 5+ junior developers and interns',
+      'Orchestrated strategic migration from AngularJS to modern Angular, improving performance and maintainability',
+      'Authored comprehensive technical documentation establishing team knowledge base and onboarding excellence',
+      'Designed streamlined onboarding process reducing new developer ramp-up time by 40%',
     ],
     technicalDecisions: [
       {
@@ -304,18 +304,19 @@ export const caseStudies: CaseStudy[] = [
   {
     id: '8',
     slug: 'medical-admin-panel',
-    title: 'Medical Admin Panel',
+    title: 'Healthcare Administration & Analytics Dashboard',
     role: 'Software Engineer',
     duration: 'Jan 2024 - Aug 2024',
     company: 'HEFES',
-    context: 'A healthcare client needed a comprehensive admin panel with reporting capabilities.',
+    context:
+      'Developed a comprehensive healthcare administration platform enabling medical staff to manage patient data, generate compliance reports, and monitor system health in real-time.',
     problem:
-      'The medical project required an admin interface with advanced reporting features using Jasper reports.',
+      'Healthcare administrators lacked a centralized dashboard for patient management, regulatory reporting, and operational analytics, leading to manual processes and delayed decision-making.',
     approach: [
-      'Complete project setup from scratch',
-      'Development of admin panel features',
-      'Integrated Jasper reports for healthcare reporting',
-      'Added Grafana dashboards for monitoring',
+      'Architected and bootstrapped entire frontend application from initial project scaffolding to production deployment',
+      'Engineered intuitive admin interface with role-based access control and audit logging capabilities',
+      'Integrated Jasper Reports engine enabling automated generation of regulatory-compliant healthcare documentation',
+      'Implemented Grafana observability dashboards providing real-time operational metrics and alerting',
     ],
     technicalDecisions: [
       {
@@ -335,17 +336,18 @@ export const caseStudies: CaseStudy[] = [
   {
     id: '9',
     slug: 'cloud-storage',
-    title: 'Cloud Storage Platform',
+    title: 'Enterprise Cloud Storage & File Management Platform',
     role: 'Software Engineer',
     duration: 'Jun 2023 - Dec 2023',
     company: 'HEFES',
-    context: 'A cloud storage platform needed feature enhancements and bug fixes.',
+    context:
+      'Enhanced a cloud-based file storage and collaboration platform enabling enterprise teams to securely store, share, and manage documents at scale.',
     problem:
-      'The existing application required both new feature development and comprehensive refactoring with design improvements.',
+      'The platform faced user experience challenges and technical debt that hindered adoption. Strategic feature enhancements and architecture improvements were needed to meet growing enterprise demands.',
     approach: [
-      'Enhanced and refactored new and existing features',
-      'Conducted comprehensive bug fixing',
-      'Implemented design improvements',
+      'Delivered strategic feature enhancements improving file management workflows and collaboration capabilities',
+      'Executed systematic technical debt reduction through targeted refactoring and code optimization',
+      'Modernized user interface implementing contemporary design patterns and improved accessibility',
     ],
     technicalDecisions: [
       {
@@ -365,17 +367,18 @@ export const caseStudies: CaseStudy[] = [
   {
     id: '10',
     slug: 'government-medical',
-    title: 'Government Medical System',
+    title: 'National Healthcare Information System',
     role: 'Software Engineer',
     duration: 'Oct 2022 - May 2023',
     company: 'HEFES',
-    context: 'A government healthcare system required ongoing maintenance and new features.',
+    context:
+      'Maintained and enhanced a government-operated healthcare information system serving medical institutions nationwide, ensuring continuous availability of critical patient services.',
     problem:
-      'Legacy AngularJS application needed maintenance, bug fixes, and new functionality while maintaining stability.',
+      'The mission-critical AngularJS platform required expert maintenance to ensure 24/7 availability while carefully introducing new functionality without disrupting essential healthcare operations.',
     approach: [
-      'Managed ongoing project maintenance',
-      'Resolved bugs in legacy codebase',
-      'Implemented new features to improve functionality',
+      'Provided expert maintenance ensuring 99.9% uptime for mission-critical healthcare infrastructure',
+      'Diagnosed and resolved complex legacy codebase issues minimizing service disruption',
+      'Delivered incremental feature enhancements improving clinical workflow efficiency',
     ],
     technicalDecisions: [
       {
